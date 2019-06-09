@@ -107,7 +107,7 @@ class Home extends Component {
           <Grid
             item
             key={product.id}
-            lg={4}
+            lg={3}
             md={6}
             xs={12}
           >
@@ -128,7 +128,7 @@ class Home extends Component {
         <div className={classes.root}>
           <ProductsToolbar />
           <div className={classes.content}>{this.renderProducts()}</div>
-          <div className={classes.pagination}>
+         {/* <div className={classes.pagination}>
             <Typography variant="caption">1-6 of 20</Typography>
             <IconButton>
               <ChevronLeftIcon />
@@ -136,7 +136,7 @@ class Home extends Component {
             <IconButton>
               <ChevronRightIcon />
             </IconButton>
-          </div>
+          </div>*/}
         </div>
       </DashboardLayout>
     );

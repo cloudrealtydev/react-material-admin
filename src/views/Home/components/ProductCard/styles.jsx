@@ -36,7 +36,7 @@ export default theme => ({
     color: theme.palette.text.secondary,
     textAlign: 'center',
     marginTop: theme.spacing.unit,
-    marginBottom: theme.spacing.unit * 2
+    marginBottom: theme.spacing.unit
   },
   stats: {
     display: 'flex',
@@ -57,5 +57,12 @@ export default theme => ({
   downloadsText: {
     marginLeft: theme.spacing.unit,
     color: theme.palette.text.secondary
-  }
+  },
+  loginButton: {
+    marginTop: theme.spacing.unit * 1,
+    width: '100%'
+  },
+  loginIcon: {
+    marginRight: theme.spacing.unit
+  },
 });

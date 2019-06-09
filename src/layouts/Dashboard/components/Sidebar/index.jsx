@@ -57,7 +57,7 @@ class Sidebar extends Component {
           </Link>
         </div>
         <Divider className={classes.logoDivider} />
-        <div className={classes.profile}>
+        {/*<div className={classes.profile}>
           <Link to="/account">
             <Avatar
               alt="Roman Kutepov"
@@ -78,7 +78,7 @@ class Sidebar extends Component {
             Brain Director
           </Typography>
         </div>
-        <Divider className={classes.profileDivider} />
+        <Divider className={classes.profileDivider} />*/}
         <List
           component="div"
           disablePadding
