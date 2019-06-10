@@ -52,8 +52,14 @@ class Sidebar extends Component {
             <img
               alt="Brainalytica logo"
               className={classes.logoImage}
-              src="/images/logos/brainalytica_logo.svg"
+              src="/images/logos/origami-bird.png"
             />
+            <Typography
+                variant="h3"
+            >
+              Expony
+            </Typography>
+
           </Link>
         </div>
         <Divider className={classes.logoDivider} />
