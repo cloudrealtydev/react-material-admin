@@ -182,7 +182,7 @@ class SignIn extends Component {
                   >
                     Sign in
                   </Typography>
-                  <Typography
+                  {/*<Typography
                     className={classes.subtitle}
                     variant="body1"
                   >
@@ -212,7 +212,7 @@ class SignIn extends Component {
                     variant="body1"
                   >
                     or login with email address
-                  </Typography>
+                  </Typography>*/}
                   <div className={classes.fields}>
                     <TextField
                       className={classes.textField}
