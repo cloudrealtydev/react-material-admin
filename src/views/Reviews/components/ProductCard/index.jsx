@@ -72,9 +72,9 @@ class ProductCard extends Component {
             {product.totalDownloads} Downloads
           </Typography>*/}
           <Button
-              className={classes.loginButton}
-              color="primary"
-              variant="contained"
+            className={classes.loginButton}
+            color="primary"
+            variant="contained"
           >
             {/*<FacebookIcon className={classes.loginIcon} />*/}
             Login

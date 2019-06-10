@@ -128,7 +128,7 @@ class Home extends Component {
         <div className={classes.root}>
           <ProductsToolbar />
           <div className={classes.content}>{this.renderProducts()}</div>
-         {/* <div className={classes.pagination}>
+          {/* <div className={classes.pagination}>
             <Typography variant="caption">1-6 of 20</Typography>
             <IconButton>
               <ChevronLeftIcon />
