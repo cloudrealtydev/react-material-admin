@@ -25,7 +25,7 @@ import {
 import { Dashboard as DashboardLayout } from 'layouts';
 
 // Shared services
-import { getProducts } from 'services/product';
+import { getReviews } from 'services/reviews';
 
 // Custom components
 import { ProductsToolbar, ProductCard } from './components';
@@ -44,11 +44,11 @@ class Reviews extends Component {
     error: null
   };
 
-  async getProducts(limit) {
+  async getReviews(limit) {
     try {
       this.setState({ isLoading: true });
 
-      const { products, productsTotal } = await getProducts(limit);
+      const { products, productsTotal } = await getReviews(limit);
 
       if (this.signal) {
         this.setState({
@@ -73,7 +73,7 @@ class Reviews extends Component {
 
     const { limit } = this.state;
 
-    this.getProducts(limit);
+    this.getReviews(limit);
   }
 
   componentWillUnmount() {

@@ -5,10 +5,13 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 // Material helpers
-import {Button, withStyles} from '@material-ui/core';
+import {Avatar, Button, withStyles} from '@material-ui/core';
 
 // Material components
 import { Typography, Divider } from '@material-ui/core';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
 
 // Material icons
 import {
@@ -29,58 +32,35 @@ import { Facebook as FacebookIcon } from 'icons';
 class ProductCard extends Component {
   render() {
     const { classes, className, product } = this.props;
-
     const rootClassName = classNames(classes.root, className);
 
+    const bull = <span className={classes.bullet}>•</span>;
+
     return (
-      <Paper className={rootClassName}>
-        <div className={classes.imageWrapper}>
-          <img
-            alt="Product"
-            className={classes.image}
-            src={product.imageUrl}
-          />
-        </div>
-        <div className={classes.details}>
-          <Typography
-            className={classes.title}
-            variant="h4"
-          >
-            {product.title}
-          </Typography>
-          <Typography
-            className={classes.description}
-            variant="body1"
-          >
-            {product.description}
-          </Typography>
-        </div>
-        <Divider />
-        <div className={classes.stats}>
-          {/*<AccessTimeIcon className={classes.updateIcon} />
-          <Typography
-            className={classes.updateText}
-            variant="body2"
-          >
-            Updated 2hr ago
-          </Typography>
-          <GetAppIcon className={classes.downloadsIcon} />
-          <Typography
-            className={classes.downloadsText}
-            variant="body2"
-          >
-            {product.totalDownloads} Downloads
-          </Typography>*/}
-          <Button
-            className={classes.loginButton}
-            color="primary"
-            variant="contained"
-          >
-            {/*<FacebookIcon className={classes.loginIcon} />*/}
-            Login
-          </Button>
-        </div>
-      </Paper>
+      <Card className={classes.card}>
+        <CardContent>
+          <div className={classes.imageWrapper}>
+            <Avatar
+              className={classes.avatar}
+              src={product.imageUrl}
+            />
+          </div>
+          <div className={classes.details}>
+            <Typography
+              className={classes.title}
+              variant="h4"
+            >
+              {product.name}
+            </Typography>
+            <Typography
+              className={classes.description}
+              variant="body1"
+            >
+              {product.review}
+            </Typography>
+          </div>
+        </CardContent>
+      </Card>
     );
   }
 }

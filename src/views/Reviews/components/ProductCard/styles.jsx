@@ -7,12 +7,8 @@ export default theme => ({
     paddingLeft: theme.spacing.unit * 3
   },
   imageWrapper: {
-    height: '64px',
     width: '64px',
-    margin: '0 auto',
-    border: '1px solid #EDF0F2',
     borderRadius: '5px',
-    overflow: 'hidden',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
@@ -21,12 +17,6 @@ export default theme => ({
     width: '100%'
   },
   details: {},
-  title: {
-    fontSize: '18px',
-    lineHeight: '21px',
-    textAlign: 'center',
-    marginTop: theme.spacing.unit * 2
-  },
   description: {
     lineHeight: '16px',
     height: theme.spacing.unit * 4,
@@ -64,5 +54,26 @@ export default theme => ({
   },
   loginIcon: {
     marginRight: theme.spacing.unit
+  },
+  card: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+  avatar: {
+      marginLeft: 'auto',
+      width: '100%',
+      height: '100%',
+      flexShrink: 0,
+      flexGrow: 0
   },
 });
