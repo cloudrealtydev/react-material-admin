@@ -50,7 +50,6 @@ class Sidebar extends Component {
             to="/"
           >
             <img
-              alt="Brainalytica logo"
               className={classes.logoImage}
               src="/images/logos/origami-bird.png"
             />
