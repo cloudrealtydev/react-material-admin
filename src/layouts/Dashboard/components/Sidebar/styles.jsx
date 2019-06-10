@@ -15,10 +15,13 @@ export default theme => ({
     flexShrink: 0
   },
   logoLink: {
-    fontSize: 0
+    fontSize: 0,
+    display: 'contents',
+    flexDirection: 'row'
   },
   logoImage: {
-    cursor: 'pointer'
+    cursor: 'pointer',
+    width: '48px'
   },
   logoDivider: {
     marginBottom: theme.spacing.unit * 2
