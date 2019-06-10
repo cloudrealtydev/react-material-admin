@@ -7,7 +7,7 @@ export default theme => ({
     paddingLeft: theme.spacing.unit * 3
   },
   imageWrapper: {
-    width: '64px',
+    width: '4rem',
     borderRadius: '5px',
     display: 'flex',
     alignItems: 'center',
@@ -66,7 +66,8 @@ export default theme => ({
     marginRight: theme.spacing.unit
   },
   card: {
-    minWidth: 275,
+    minHeight: '14.375rem',
+    minWidth: '26.25rem',
   },
   bullet: {
     display: 'inline-block',
@@ -75,12 +76,12 @@ export default theme => ({
   },
   title: {
     fontSize: 14,
-    marginLeft: '10px'
+    marginLeft: '0.625rem'
   },
   location: {
     fontWeight: 100,
     fontSize: 14,
-    marginLeft: '10px'
+    marginLeft: '0.625rem'
   },
   pos: {
     marginBottom: 12,
