@@ -166,14 +166,14 @@ class SignIn extends Component {
             xs={12}
           >
             <div className={classes.content}>
-              <div className={classes.contentHeader}>
+              {/*<div className={classes.contentHeader}>
                 <IconButton
                   className={classes.backButton}
                   onClick={this.handleBack}
                 >
                   <ArrowBackIcon />
                 </IconButton>
-              </div>
+              </div>*/}
               <div className={classes.contentBody}>
                 <form className={classes.form}>
                   <Typography
@@ -182,7 +182,7 @@ class SignIn extends Component {
                   >
                     Sign in
                   </Typography>
-                  <Typography
+                  {/*<Typography
                     className={classes.subtitle}
                     variant="body1"
                   >
@@ -212,7 +212,7 @@ class SignIn extends Component {
                     variant="body1"
                   >
                     or login with email address
-                  </Typography>
+                  </Typography>*/}
                   <div className={classes.fields}>
                     <TextField
                       className={classes.textField}

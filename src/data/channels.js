@@ -20,5 +20,16 @@ export default [
     price: '10',
     status: 'published',
     createdAt: '27/03/2019'
+  },
+  {
+    id: 'DEV738087',
+    title: 'Expedia',
+    description:
+        'Expedia Group is an American global travel technology company.',
+    imageUrl: '/images/products/expedia.png',
+    totalDownloads: '594',
+    price: '10',
+    status: 'published',
+    createdAt: '27/03/2019'
   }
 ];
