@@ -19,6 +19,10 @@ const styles = theme => ({
   company: {
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit * 0.5
+  },
+
+  logoImage: {
+      width: '18px'
   }
 });
 
@@ -35,10 +39,14 @@ class Footer extends Component {
           className={classes.company}
           variant="body1"
         >
-          &copy; Admin Io. 2019
+          &copy; Expony Inc. 2019
         </Typography>
         <Typography variant="caption">
-          Created with love for the environment. By designers and developers who
+            <img
+                className={classes.logoImage}
+                src="/images/logos/origami-bird.png"
+            />
+          Created with love for the environment by designers and developers who
           love to work together in Istanbul office!
         </Typography>
       </div>
