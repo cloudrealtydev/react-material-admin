@@ -15,7 +15,12 @@ import {
   IconButton,
   Popover,
   Toolbar,
-  Typography
+  Typography,
+  Select,
+  Input,
+  Checkbox,
+  MenuItem,
+  ListItemText
 } from '@material-ui/core';
 
 // Material icons
@@ -42,7 +47,8 @@ class Topbar extends Component {
     notifications: [],
     notificationsLimit: 4,
     notificationsCount: 0,
-    notificationsEl: null
+    notificationsEl: null,
+    names: []
   };
 
   async getNotifications() {
@@ -100,10 +106,54 @@ class Topbar extends Component {
       isSidebarOpen,
       onToggleSidebar
     } = this.props;
-    const { notifications, notificationsCount, notificationsEl } = this.state;
+    const { notifications, notificationsCount, notificationsEl, personName, setPersonName } = this.state;
 
     const rootClassName = classNames(classes.root, className);
     const showNotifications = Boolean(notificationsEl);
+
+  /*  const handleChange = name => event => {
+      setState({
+        ...state,
+        [name]: event.target.value,
+      });
+    };*/
+
+    function getStyles(name, personName, theme) {
+      return {
+        fontWeight:
+            personName.indexOf(name) === -1
+                ? theme.typography.fontWeightRegular
+                : theme.typography.fontWeightMedium,
+      };
+    }
+
+    function handleChange(event) {
+      setPersonName(event.target.value);
+    }
+
+    const ITEM_HEIGHT = 48;
+    const ITEM_PADDING_TOP = 8;
+    const MenuProps = {
+      PaperProps: {
+        style: {
+          maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+          width: 250,
+        },
+      },
+    };
+
+    const names = [
+      'Oliver Hansen',
+      'Van Henry',
+      'April Tucker',
+      'Ralph Hubbard',
+      'Omar Alexander',
+      'Carlos Abbott',
+      'Miriam Wagner',
+      'Bradley Wilkerson',
+      'Virginia Andrews',
+      'Kelly Snyder',
+    ];
 
     return (
       <Fragment>
@@ -140,6 +190,21 @@ class Topbar extends Component {
             >
               <InputIcon />
             </IconButton>
+          {/*  <Select
+                multiple
+                value={personName}
+                onChange={handleChange}
+                input={<Input id="select-multiple-checkbox" />}
+                renderValue={selected => selected.join(', ')}
+                MenuProps={MenuProps}
+            >
+              {names.map(name => (
+                  <MenuItem key={name} value={name}>
+                    <Checkbox checked={personName.indexOf(name) > -1} />
+                    <ListItemText primary={name} />
+                  </MenuItem>
+              ))}
+            </Select>*/}
           </Toolbar>
         </div>
         <Popover
