@@ -116,8 +116,7 @@ material-react-dashboard
 	│	├── UnderDevelopment
 	│	└── UserList
 	├── App.jsx
-	├── index.jsx
-	└── Routes.jsx
+	├── Reviews.jsx└── Routes.jsx
 ```
 
 ## Resources

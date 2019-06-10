@@ -5,8 +5,8 @@ export const getReviews = (limit = 6) => {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve({
-          products: reviews.slice(0, limit),
-          productsTotal: reviews.length
+        reviews: reviews.slice(0, limit),
+        reviewsTotal: reviews.length
       });
     }, 700);
   });

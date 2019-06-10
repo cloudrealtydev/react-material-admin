@@ -1,37 +1,19 @@
 import React, { Component } from 'react';
-
-// Externals
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-
-// Material helpers
-import {Avatar, Button, withStyles} from '@material-ui/core';
-
-// Material components
-import { Typography, Divider } from '@material-ui/core';
+import {Avatar, withStyles, Typography} from '@material-ui/core';
+import {LocationOn as LocationOnIcon } from '@material-ui/icons';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-
-import BookingIcon from './booking_icon.png';
-import TripAdvisor from './tripadvisor_icon.png';
-// Material icons
-import {
-  LocationOn as LocationOnIcon,
-} from '@material-ui/icons';
-
-// Shared components
-import { Paper } from 'components';
-
-// Component styles
+import BookingIcon from './icons/booking_icon.png';
+import TripAdvisor from './icons/tripadvisor_icon.png';
 import styles from './styles';
 
 
-class ProductCard extends Component {
+class ReviewCard extends Component {
   render() {
     const { classes, product } = this.props;
 
-    var sourceSite;
+    let sourceSite;
     if (product.source === 'Booking.com') {
       sourceSite = <img alt="Booking.com" className={classes.site} src={BookingIcon}/>;
     } else if (product.source === 'TripAdvisor') {
@@ -45,6 +27,7 @@ class ProductCard extends Component {
             <div className={classes.imageWrapper}>
               <Avatar className={classes.avatar} src={product.avatarUrl}/>
             </div>
+
             <div className={classes.locationDetails}>
               <Typography className={classes.title} variant="h4">
                 {product.userName}
@@ -57,6 +40,7 @@ class ProductCard extends Component {
                 {product.date}
               </Typography>
             </div>
+
             <div className={classes.siteDetails}>
               {sourceSite}
               <Typography className={classes.location} variant="h4">
@@ -67,6 +51,7 @@ class ProductCard extends Component {
               </Typography>
             </div>
           </div>
+
           <div>
             <Typography className={classes.description} variant="body1">
               {product.review}
@@ -78,10 +63,10 @@ class ProductCard extends Component {
   }
 }
 
-ProductCard.propTypes = {
+ReviewCard.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
   product: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(ProductCard);
+export default withStyles(styles)(ReviewCard);
