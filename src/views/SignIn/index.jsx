@@ -32,6 +32,8 @@ import styles from './styles';
 // Form validation schema
 import schema from './schema';
 
+import { Footer } from '../../layouts/Dashboard/components';
+
 // Service methods
 const signIn = () => {
   return new Promise(resolve => {
@@ -166,14 +168,6 @@ class SignIn extends Component {
             xs={12}
           >
             <div className={classes.content}>
-              {/*<div className={classes.contentHeader}>
-                <IconButton
-                  className={classes.backButton}
-                  onClick={this.handleBack}
-                >
-                  <ArrowBackIcon />
-                </IconButton>
-              </div>*/}
               <div className={classes.contentBody}>
                 <form className={classes.form}>
                   <Typography
@@ -182,37 +176,6 @@ class SignIn extends Component {
                   >
                     Sign in
                   </Typography>
-                  {/*<Typography
-                    className={classes.subtitle}
-                    variant="body1"
-                  >
-                    Sign in with social media
-                  </Typography>
-                  <Button
-                    className={classes.facebookButton}
-                    color="primary"
-                    onClick={this.handleSignIn}
-                    size="large"
-                    variant="contained"
-                  >
-                    <FacebookIcon className={classes.facebookIcon} />
-                    Login with Facebook
-                  </Button>
-                  <Button
-                    className={classes.googleButton}
-                    onClick={this.handleSignIn}
-                    size="large"
-                    variant="contained"
-                  >
-                    <GoogleIcon className={classes.googleIcon} />
-                    Login with Google
-                  </Button>
-                  <Typography
-                    className={classes.sugestion}
-                    variant="body1"
-                  >
-                    or login with email address
-                  </Typography>*/}
                   <div className={classes.fields}>
                     <TextField
                       className={classes.textField}
@@ -289,6 +252,7 @@ class SignIn extends Component {
                   </Typography>
                 </form>
               </div>
+              <Footer/>
             </div>
           </Grid>
         </Grid>

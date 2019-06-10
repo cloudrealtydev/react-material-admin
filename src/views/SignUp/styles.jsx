@@ -66,7 +66,6 @@ export default theme => ({
   form: {
     paddingLeft: '100px',
     paddingRight: '100px',
-    paddingBottom: '125px',
     flexBasis: '700px',
     [theme.breakpoints.down('sm')]: {
       paddingLeft: theme.spacing.unit * 2,
