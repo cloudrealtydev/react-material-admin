@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 // Views
 import Dashboard from './views/Dashboard';
+import Reviews from './views/Reviews';
 import Home from './views/Home';
 import ProductList from './views/ProductList';
 import UserList from './views/UserList';
@@ -29,11 +30,16 @@ export default class Routes extends Component {
           exact
           path="/dashboard"
         />
-          <Route
-              component={Home}
-              exact
-              path="/home"
-          />
+        <Route
+          component={Home}
+          exact
+          path="/home"
+        />
+        <Route
+          component={Reviews}
+          exact
+          path="/reviews"
+        />
         <Route
           component={UserList}
           exact
