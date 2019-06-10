@@ -16,16 +16,26 @@ export default theme => ({
   image: {
     width: '100%'
   },
-  details: {},
+  details: {
+    display: 'flex',
+  },
+  locationDetails: {
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  siteDetails: {
+    display: 'flex',
+    flexDirection: 'column',
+    marginLeft: 'auto',
+    alignItems: 'flex-end',
+  },
   description: {
     lineHeight: '16px',
-    height: theme.spacing.unit * 4,
+    height: '100px',
     overflow: 'hidden',
-    whiteSpace: 'nowrap',
     textOverflow: 'ellipsis',
     color: theme.palette.text.secondary,
-    textAlign: 'center',
-    marginTop: theme.spacing.unit,
+    marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit
   },
   stats: {
@@ -65,15 +75,29 @@ export default theme => ({
   },
   title: {
     fontSize: 14,
+    marginLeft: '10px'
+  },
+  location: {
+    fontWeight: 100,
+    fontSize: 14,
+    marginLeft: '10px'
   },
   pos: {
     marginBottom: 12,
   },
   avatar: {
-      marginLeft: 'auto',
-      width: '100%',
-      height: '100%',
-      flexShrink: 0,
-      flexGrow: 0
+    marginLeft: 'auto',
+    width: '100%',
+    height: '100%',
+    flexShrink: 0,
+    flexGrow: 0
+  },
+  icon: {
+    color: 'gray',
+    height: '1.1rem',
+  },
+  site: {
+    color: 'gray',
+    height: '1.1rem',
   },
 });
