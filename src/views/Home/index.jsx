@@ -9,23 +9,16 @@ import { withStyles } from '@material-ui/core';
 
 // Material components
 import {
-  IconButton,
   CircularProgress,
   Grid,
   Typography
 } from '@material-ui/core';
 
-// Material icons
-import {
-  ChevronRight as ChevronRightIcon,
-  ChevronLeft as ChevronLeftIcon
-} from '@material-ui/icons';
-
 // Shared layouts
 import { Dashboard as DashboardLayout } from 'layouts';
 
 // Shared services
-import { getProducts } from 'services/product';
+import { getProducts } from 'services/channel';
 
 // Custom components
 import { ProductsToolbar, ProductCard } from './components';
@@ -124,19 +117,10 @@ class Home extends Component {
     const { classes } = this.props;
 
     return (
-      <DashboardLayout title="Products">
+      <DashboardLayout title="Channels">
         <div className={classes.root}>
           <ProductsToolbar />
           <div className={classes.content}>{this.renderProducts()}</div>
-          {/* <div className={classes.pagination}>
-            <Typography variant="caption">1-6 of 20</Typography>
-            <IconButton>
-              <ChevronLeftIcon />
-            </IconButton>
-            <IconButton>
-              <ChevronRightIcon />
-            </IconButton>
-          </div>*/}
         </div>
       </DashboardLayout>
     );

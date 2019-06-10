@@ -10,21 +10,11 @@ import {Button, withStyles} from '@material-ui/core';
 // Material components
 import { Typography, Divider } from '@material-ui/core';
 
-// Material icons
-import {
-  AccessTime as AccessTimeIcon,
-  GetApp as GetAppIcon
-} from '@material-ui/icons';
-
 // Shared components
 import { Paper } from 'components';
 
 // Component styles
 import styles from './styles';
-
-// Shared components
-import { Facebook as FacebookIcon } from 'icons';
-
 
 class ProductCard extends Component {
   render() {
@@ -57,26 +47,11 @@ class ProductCard extends Component {
         </div>
         <Divider />
         <div className={classes.stats}>
-          {/*<AccessTimeIcon className={classes.updateIcon} />
-          <Typography
-            className={classes.updateText}
-            variant="body2"
-          >
-            Updated 2hr ago
-          </Typography>
-          <GetAppIcon className={classes.downloadsIcon} />
-          <Typography
-            className={classes.downloadsText}
-            variant="body2"
-          >
-            {product.totalDownloads} Downloads
-          </Typography>*/}
           <Button
             className={classes.loginButton}
             color="primary"
             variant="contained"
           >
-            {/*<FacebookIcon className={classes.loginIcon} />*/}
             Login
           </Button>
         </div>
