@@ -18,5 +18,15 @@ export default [
     score: '5/5',
     source: 'TripAdvisor',
     date:'Reviewed: 14 May 2019'
+  },
+  {
+    id: '3',
+    userName: 'Emiliano Galle ',
+    review: 'Rooms were spacious, clean and hospitality was top notch - there are no elevators but the staff were super sweet and insisted we leave all luggage lifting to them and even spent considerable time helping our driver retrieve our friend\'s phone when they heard it had fallen into a crevice behind the car seats.',
+    avatarUrl: '/images/avatars/avatar_4.png',
+    location: 'London, United Kingdom',
+    score: '4/5',
+    source: 'TripAdvisor',
+    date:'Reviewed: 14 May 2019'
   }
 ];

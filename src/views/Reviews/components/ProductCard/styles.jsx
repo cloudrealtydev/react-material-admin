@@ -8,7 +8,7 @@ export default theme => ({
   },
   imageWrapper: {
     width: '4rem',
-    borderRadius: '5px',
+    borderRadius: '0.3125rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
@@ -30,9 +30,9 @@ export default theme => ({
     alignItems: 'flex-end',
   },
   description: {
-    lineHeight: '16px',
-    height: '100px',
-    overflow: 'hidden',
+    lineHeight: '1.3rem',
+    overflow: 'auto',
+    height: '7.5rem',
     textOverflow: 'ellipsis',
     color: theme.palette.text.secondary,
     marginTop: theme.spacing.unit * 2,
@@ -66,8 +66,8 @@ export default theme => ({
     marginRight: theme.spacing.unit
   },
   card: {
-    minHeight: '14.375rem',
-    minWidth: '26.25rem',
+    maxWidth: '46.875rem',
+    maxHeight: '15.625rem',
   },
   bullet: {
     display: 'inline-block',

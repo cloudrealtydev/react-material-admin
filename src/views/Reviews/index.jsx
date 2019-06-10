@@ -107,9 +107,10 @@ class Reviews extends Component {
           <Grid
             item
             key={product.id}
-            lg={3}
-            md={6}
+            lg={12}
+            md={12}
             xs={12}
+            sm={12}
           >
             <Link to="#">
               <ProductCard product={product} />
