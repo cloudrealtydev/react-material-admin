@@ -38,6 +38,8 @@ import { getNotifications } from 'services/notification';
 // Custom components
 import { NotificationList } from './components';
 
+import TR from './icons/TR_flag.png';
+import EN from './icons/US_flag.png';
 // Component styles
 import styles from './styles';
 
@@ -49,7 +51,8 @@ class Topbar extends Component {
     notificationsLimit: 4,
     notificationsCount: 0,
     notificationsEl: null,
-    names: []
+    names: [],
+    selectedLang: ''
   };
 
   async getNotifications() {
@@ -99,6 +102,12 @@ class Topbar extends Component {
     });
   };
 
+  handleChangeLang = (value) => {
+    this.setState({
+      selectedLang: value
+    });
+  };
+
   render() {
     const {
       classes,
@@ -107,35 +116,23 @@ class Topbar extends Component {
       isSidebarOpen,
       onToggleSidebar
     } = this.props;
-    const { notifications, notificationsCount, notificationsEl, personName, setPersonName } = this.state;
+    const { notifications, notificationsCount, notificationsEl, personName, setPersonName, selectedLang } = this.state;
 
     const rootClassName = classNames(classes.root, className);
     const showNotifications = Boolean(notificationsEl);
-
-/*    const [values, setValues] = React.useState({
-      age: '',
-      name: 'hai',
-    });*/
 
     function getStyles(name, personName, theme) {
       return {
         fontWeight:
             personName.indexOf(name) === -1
-                ? theme.typography.fontWeightRegular
-                : theme.typography.fontWeightMedium,
+              ? theme.typography.fontWeightRegular
+              : theme.typography.fontWeightMedium,
       };
     }
 
     function handleChange(event) {
       setPersonName(event.target.value);
     }
-
-/*    function handleDropdownChange(event) {
-      setValues(oldValues => ({
-        ...oldValues,
-        [event.target.name]: event.target.value,
-      }));
-    }*/
 
     const ITEM_HEIGHT = 48;
     const ITEM_PADDING_TOP = 8;
@@ -197,15 +194,15 @@ class Topbar extends Component {
               <InputIcon />
             </IconButton>
 
-{/*            <FormControl className={classes.formControl}>
+            <FormControl className={classes.formControl}>
               <Select
-                value={values.age}
-                onChange={handleDropdownChange}
+                onChange={event => this.handleChangeLang(event.target.value)}
+                value={selectedLang}
               >
-                <MenuItem value={10}>TR</MenuItem>
-                <MenuItem value={20}>EN</MenuItem>
+                <MenuItem value={10}><img alt="TR" className={classes.icon} src={TR}/> TR</MenuItem>
+                <MenuItem value={20}><img alt="EN" className={classes.icon} src={EN}/> EN</MenuItem>
               </Select>
-            </FormControl>*/}
+            </FormControl>
 
           </Toolbar>
         </div>

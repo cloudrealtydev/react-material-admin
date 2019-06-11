@@ -27,4 +27,7 @@ export default theme => ({
     margin: theme.spacing(1),
     minWidth: 120,
   },
+  icon: {
+    width: '30px',
+  }
 });
