@@ -10,7 +10,6 @@ import { withStyles } from '@material-ui/core';
 
 // Material components
 import {
-  Avatar,
   Divider,
   List,
   ListItem,
@@ -30,7 +29,9 @@ import {
   ImageOutlined as ImageIcon,
   InfoOutlined as InfoIcon,
   AccountBoxOutlined as AccountBoxIcon,
-  SettingsOutlined as SettingsIcon
+  SettingsOutlined as SettingsIcon,
+  SwitchVideoOutlined as ChannelsIcon,
+  CommentOutlined as ReviewsIcon
 } from '@material-ui/icons';
 
 // Component styles
@@ -106,14 +107,14 @@ class Sidebar extends Component {
             activeClassName={classes.activeListItem}
             className={classes.listItem}
             component={NavLink}
-            to="/home"
+            to="/channels"
           >
             <ListItemIcon className={classes.listItemIcon}>
-              <DashboardIcon />
+              <ChannelsIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Home"
+              primary="Channels"
             />
           </ListItem>
           <ListItem
@@ -123,7 +124,7 @@ class Sidebar extends Component {
             to="/reviews"
           >
             <ListItemIcon className={classes.listItemIcon}>
-              <DashboardIcon />
+              <ReviewsIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}

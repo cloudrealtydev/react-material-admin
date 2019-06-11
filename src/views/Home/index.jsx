@@ -26,7 +26,7 @@ import { ProductsToolbar, ProductCard } from './components';
 // Component styles
 import styles from './styles';
 
-class Home extends Component {
+class Channels extends Component {
   signal = true;
 
   state = {
@@ -127,8 +127,8 @@ class Home extends Component {
   }
 }
 
-Home.propTypes = {
+Channels.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Home);
+export default withStyles(styles)(Channels);
