@@ -29,6 +29,8 @@ import { Facebook as FacebookIcon, Google as GoogleIcon } from 'icons';
 // Component styles
 import styles from './styles';
 
+import SweetAlert from 'sweetalert2';
+
 // Form validation schema
 import schema from './schema';
 
@@ -110,6 +112,8 @@ class SignIn extends Component {
     }
   };
 
+
+
   render() {
     const { classes } = this.props;
     const {
@@ -123,6 +127,14 @@ class SignIn extends Component {
 
     const showEmailError = touched.email && errors.email;
     const showPasswordError = touched.password && errors.password;
+
+    SweetAlert.fire({
+      title: 'Error!',
+      text: 'Do you want to continue',
+      type: 'error',
+      confirmButtonText: 'Cool'
+    });
+
 
     return (
       <div className={classes.root}>
