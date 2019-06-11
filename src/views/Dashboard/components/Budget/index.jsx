@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 // Material helpers
-import { withStyles } from '@material-ui/core';
+import {LinearProgress, withStyles} from '@material-ui/core';
 
 // Material components
 import { Typography } from '@material-ui/core';
@@ -18,7 +18,7 @@ import {
 
 // Shared components
 import { Paper } from 'components';
-
+import BookingIcon from '../icons/booking_icon.png'
 // Component styles
 import styles from './styles';
 
@@ -39,17 +39,40 @@ class Budget extends Component {
               className={classes.title}
               variant="body2"
             >
-              BUDGET
+              Booking.com
             </Typography>
             <Typography
               className={classes.value}
               variant="h3"
             >
-              $24,000
+              7.3
             </Typography>
           </div>
           <div className={classes.iconWrapper}>
-            <MoneyIcon className={classes.icon} />
+            <img alt="Booking.com"  src={BookingIcon}/>
+          </div>
+        </div>
+        <div>
+          <div className={classes.progressWrapper}>
+            <Typography variant="body1">Staff: %89</Typography>
+            <LinearProgress
+              value={89}
+              variant="determinate"
+            />
+          </div>
+          <div className={classes.progressWrapper}>
+            <Typography variant="body1">Facilities: %30</Typography>
+            <LinearProgress
+              value={30}
+              variant="determinate"
+            />
+          </div>
+          <div className={classes.progressWrapper}>
+            <Typography variant="body1">Cleanliness: %64</Typography>
+            <LinearProgress
+              value={64}
+              variant="determinate"
+            />
           </div>
         </div>
         <div className={classes.footer}>

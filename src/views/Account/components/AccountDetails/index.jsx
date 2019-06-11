@@ -39,6 +39,7 @@ const states = [
 
 class Account extends Component {
   state = {
+    hotelName: 'Mandalina Luxury Suites',
     firstName: 'John',
     lastName: 'Doe',
     email: 'contact@devias.io',
@@ -55,7 +56,7 @@ class Account extends Component {
 
   render() {
     const { classes, className, ...rest } = this.props;
-    const { firstName, lastName, phone, state, country, email } = this.state;
+    const { firstName, lastName, phone, state, country, email, hotelName } = this.state;
 
     const rootClassName = classNames(classes.root, className);
 
@@ -66,8 +67,8 @@ class Account extends Component {
       >
         <PortletHeader>
           <PortletLabel
-            subtitle="The information can be edited"
-            title="Profile"
+            subtitle="Add information about hotel"
+            title="Hotel Profile"
           />
         </PortletHeader>
         <PortletContent noPadding>
@@ -78,7 +79,17 @@ class Account extends Component {
             <div className={classes.field}>
               <TextField
                 className={classes.textField}
-                helperText="Please specify the first name"
+                label="Hotel Name"
+                margin="dense"
+                required
+                value={hotelName}
+                variant="outlined"
+              />
+            </div>
+            <div className={classes.field}>
+              <TextField
+                className={classes.textField}
+                helperText="Please specify the authorized person first name"
                 label="First name"
                 margin="dense"
                 required

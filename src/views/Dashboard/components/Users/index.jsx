@@ -13,9 +13,10 @@ import { Typography } from '@material-ui/core';
 // Material icons
 import {
   ArrowUpward as ArrowUpwardIcon,
+  Adjust,
   PeopleOutlined as PeopleIcon
 } from '@material-ui/icons';
-
+import TripAdvisorIcon from '../icons/tripadvisor_icon.png'
 // Shared components
 import { Paper } from 'components';
 
@@ -39,18 +40,26 @@ class Users extends Component {
               className={classes.title}
               variant="body2"
             >
-              TOTAL USERS
+              TripAdvisor
             </Typography>
             <Typography
               className={classes.value}
               variant="h3"
             >
-              1600
+              4.2
             </Typography>
           </div>
           <div className={classes.iconWrapper}>
-            <PeopleIcon className={classes.icon} />
+            <img alt="TripAdvisor"  className={classes.channelIcon} src={TripAdvisorIcon}/>
           </div>
+        </div>
+        <div className={classes.flex}>
+          <Adjust className={classes.adjustIcon} />
+          <Adjust className={classes.adjustIcon} />
+          <Adjust className={classes.adjustIcon} />
+          <Adjust className={classes.adjustIcon} />
+          <Adjust className={classes.adjustIcon} />
+          <Typography variant="body1">Location</Typography>
         </div>
         <div className={classes.footer}>
           <Typography
