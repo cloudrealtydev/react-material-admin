@@ -33,7 +33,7 @@ export default class Routes extends Component {
         <Route
           component={Home}
           exact
-          path="/home"
+          path="/channels"
         />
         <Route
           component={Reviews}

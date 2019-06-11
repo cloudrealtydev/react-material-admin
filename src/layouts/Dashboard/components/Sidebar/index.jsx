@@ -107,7 +107,7 @@ class Sidebar extends Component {
             activeClassName={classes.activeListItem}
             className={classes.listItem}
             component={NavLink}
-            to="/home"
+            to="/channels"
           >
             <ListItemIcon className={classes.listItemIcon}>
               <ChannelsIcon />
