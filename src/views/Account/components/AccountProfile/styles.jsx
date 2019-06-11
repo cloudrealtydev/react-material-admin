@@ -6,7 +6,8 @@ export default theme => ({
   info: {},
   locationText: {
     marginTop: theme.spacing.unit,
-    color: theme.palette.text.secondary
+    color: theme.palette.text.secondary,
+    whiteSpace: 'pre',
   },
   dateText: {
     color: theme.palette.text.secondary
