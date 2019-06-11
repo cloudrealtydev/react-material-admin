@@ -8,14 +8,14 @@ export default theme => ({
   },
   title: {
     color: theme.palette.text.secondary,
-    fontWeight: 700
+    fontWeight: 700,
+    fontSize: '20px'
   },
   value: {
     marginTop: theme.spacing.unit
   },
   iconWrapper: {
     alignItems: 'center',
-    backgroundColor: theme.palette.success.main,
     borderRadius: '50%',
     display: 'inline-flex',
     height: '4rem',
@@ -42,5 +42,16 @@ export default theme => ({
   },
   caption: {
     marginLeft: theme.spacing.unit
+  },
+  channelIcon: {
+    width: '50px',
+    height: '50px'
+  },
+  adjustIcon: {
+    color: '#00a680',
+  },
+  flex: {
+    display: 'flex',
+    flexDirection: 'row'
   }
 });

@@ -63,7 +63,7 @@ class Dashboard extends Component {
             >
               <Users className={classes.item} />
             </Grid>
-            <Grid
+{/*            <Grid
               item
               lg={3}
               sm={6}
@@ -71,7 +71,7 @@ class Dashboard extends Component {
               xs={12}
             >
               <Progress className={classes.item} />
-            </Grid>
+            </Grid>*/}
             <Grid
               item
               lg={3}
