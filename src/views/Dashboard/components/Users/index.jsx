@@ -53,13 +53,31 @@ class Users extends Component {
             <img alt="TripAdvisor"  className={classes.channelIcon} src={TripAdvisorIcon}/>
           </div>
         </div>
-        <div className={classes.flex}>
-          <Adjust className={classes.adjustIcon} />
-          <Adjust className={classes.adjustIcon} />
-          <Adjust className={classes.adjustIcon} />
-          <Adjust className={classes.adjustIcon} />
-          <Adjust className={classes.adjustIcon} />
-          <Typography variant="body1">Location</Typography>
+        <div>
+          <div className={classes.flex}>
+            <Adjust className={classes.adjustIcon} />
+            <Adjust className={classes.adjustIcon} />
+            <Adjust className={classes.adjustIcon} />
+            <Adjust className={classes.adjustIcon} />
+            <Adjust className={classes.adjustIcon} />
+            <Typography variant="body1">Location</Typography>
+          </div>
+          <div className={classes.flex}>
+            <Adjust className={classes.adjustIcon} />
+            <Adjust className={classes.adjustIcon} />
+            <Adjust className={classes.adjustIcon} />
+            <Adjust className={classes.adjustIcon} />
+            <Adjust className={classes.adjustIcon} />
+            <Typography variant="body1">Cleanliness</Typography>
+          </div>
+          <div className={classes.flex}>
+            <Adjust className={classes.adjustIcon} />
+            <Adjust className={classes.adjustIcon} />
+            <Adjust className={classes.adjustIcon} />
+            <Adjust className={classes.adjustIcon} />
+            <Adjust className={classes.adjustIcon} />
+            <Typography variant="body1">Service</Typography>
+          </div>
         </div>
         <div className={classes.footer}>
           <Typography
