@@ -13,8 +13,7 @@ import { Typography } from '@material-ui/core';
 // Material icons
 import {
   ArrowUpward as ArrowUpwardIcon,
-  Adjust,
-  PeopleOutlined as PeopleIcon
+  Adjust
 } from '@material-ui/icons';
 import TripAdvisorIcon from '../icons/tripadvisor_icon.png'
 import TripAdvisorRatingIcon from '../../trip-advisor-rating.svg'

@@ -25,9 +25,14 @@ export default theme => ({
   },
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 60,
+    marginLeft: 'auto'
   },
   icon: {
-    width: '30px',
+    width: '24px',
+  },
+  optionText: {
+    marginTop: '2px',
+    marginLeft: '5px',
   }
 });

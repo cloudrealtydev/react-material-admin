@@ -16,7 +16,6 @@ import { Dashboard as DashboardLayout } from 'layouts';
 import {
   Budget,
   Users,
-  Progress,
   Profit,
   SalesChart,
   DevicesChart,

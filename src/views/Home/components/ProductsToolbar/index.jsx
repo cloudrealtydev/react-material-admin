@@ -7,9 +7,6 @@ import classNames from 'classnames';
 // Material helpers
 import { withStyles } from '@material-ui/core';
 
-// Shared components
-import { DisplayMode, SearchInput } from 'components';
-
 // Component styles
 import styles from './styles';
 

@@ -43,6 +43,7 @@ class Footer extends Component {
         </Typography>
         <Typography variant="caption">
             <img
+                alt="logo"
                 className={classes.logoImage}
                 src="/images/logos/origami-bird.png"
             />
