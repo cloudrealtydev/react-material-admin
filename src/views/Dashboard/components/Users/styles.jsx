@@ -53,5 +53,9 @@ export default theme => ({
   flex: {
     display: 'flex',
     flexDirection: 'row'
+  },
+  rating: {
+    marginTop: '16px',
+    marginBottom: '40px'
   }
 });

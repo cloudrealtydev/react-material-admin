@@ -17,6 +17,8 @@ import {
   PeopleOutlined as PeopleIcon
 } from '@material-ui/icons';
 import TripAdvisorIcon from '../icons/tripadvisor_icon.png'
+import TripAdvisorRatingIcon from '../../trip-advisor-rating.svg'
+
 // Shared components
 import { Paper } from 'components';
 
@@ -53,30 +55,22 @@ class Users extends Component {
             <img alt="TripAdvisor"  className={classes.channelIcon} src={TripAdvisorIcon}/>
           </div>
         </div>
-        <div>
+        <div className={classes.rating}>
           <div className={classes.flex}>
-            <Adjust className={classes.adjustIcon} />
-            <Adjust className={classes.adjustIcon} />
-            <Adjust className={classes.adjustIcon} />
-            <Adjust className={classes.adjustIcon} />
-            <Adjust className={classes.adjustIcon} />
+            <img alt="TripAdvisorRatingIcon" src={TripAdvisorRatingIcon}/>
             <Typography variant="body1">Location</Typography>
           </div>
           <div className={classes.flex}>
-            <Adjust className={classes.adjustIcon} />
-            <Adjust className={classes.adjustIcon} />
-            <Adjust className={classes.adjustIcon} />
-            <Adjust className={classes.adjustIcon} />
-            <Adjust className={classes.adjustIcon} />
+            <img alt="TripAdvisorRatingIcon" src={TripAdvisorRatingIcon}/>
             <Typography variant="body1">Cleanliness</Typography>
           </div>
           <div className={classes.flex}>
-            <Adjust className={classes.adjustIcon} />
-            <Adjust className={classes.adjustIcon} />
-            <Adjust className={classes.adjustIcon} />
-            <Adjust className={classes.adjustIcon} />
-            <Adjust className={classes.adjustIcon} />
+            <img alt="TripAdvisorRatingIcon" src={TripAdvisorRatingIcon}/>
             <Typography variant="body1">Service</Typography>
+          </div>
+          <div className={classes.flex}>
+            <img alt="TripAdvisorRatingIcon" src={TripAdvisorRatingIcon}/>
+            <Typography variant="body1">Value</Typography>
           </div>
         </div>
         <div className={classes.footer}>
