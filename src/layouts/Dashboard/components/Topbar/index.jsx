@@ -79,7 +79,7 @@ class Topbar extends Component {
     this.signal = false;
   }
 
-  handleSignOut = () => {
+  /*handleSignOut = () => {
     const { history } = this.props;
 
     localStorage.setItem('isAuthenticated', false);
@@ -96,7 +96,7 @@ class Topbar extends Component {
     this.setState({
       notificationsEl: null
     });
-  };
+  };*/
 
   handleChangeLang = (value) => {
     this.setState({
@@ -105,6 +105,7 @@ class Topbar extends Component {
   };
 
   render() {
+
     const {
       classes,
       className,
@@ -112,10 +113,14 @@ class Topbar extends Component {
       isSidebarOpen,
       onToggleSidebar
     } = this.props;
-    const { notifications, notificationsCount, notificationsEl, selectedLang } = this.state;
+
+    const {selectedLang } = this.state;
 
     const rootClassName = classNames(classes.root, className);
-    const showNotifications = Boolean(notificationsEl);
+
+    this.state.selectedLang='10';
+
+    /*const showNotifications = Boolean(notificationsEl);*/
 
     return (
       <Fragment>
@@ -134,7 +139,7 @@ class Topbar extends Component {
             >
               {title}
             </Typography>
-            <IconButton
+            {/*<IconButton
               className={classes.notificationsButton}
               onClick={this.handleShowNotifications}
             >
@@ -151,21 +156,23 @@ class Topbar extends Component {
               onClick={this.handleSignOut}
             >
               <InputIcon />
-            </IconButton>
+            </IconButton>*/}
 
             <FormControl className={classes.formControl}>
               <Select
                 onChange={event => this.handleChangeLang(event.target.value)}
                 value={selectedLang}
               >
-                <MenuItem value={10}><img alt="TR" className={classes.icon} src={TR}/> TR</MenuItem>
-                <MenuItem value={20}><img alt="EN" className={classes.icon} src={EN}/> EN</MenuItem>
+                <MenuItem value={10} ><img alt="TR" className={classes.icon} src={TR}/>
+                </MenuItem>
+                <MenuItem value={20}><img alt="EN" className={classes.icon} src={EN}/>
+                </MenuItem>
               </Select>
             </FormControl>
 
           </Toolbar>
         </div>
-        <Popover
+        {/*<Popover
           anchorEl={notificationsEl}
           anchorOrigin={{
             vertical: 'bottom',
@@ -182,7 +189,7 @@ class Topbar extends Component {
             notifications={notifications}
             onSelect={this.handleCloseNotifications}
           />
-        </Popover>
+        </Popover>*/}
       </Fragment>
     );
   }
