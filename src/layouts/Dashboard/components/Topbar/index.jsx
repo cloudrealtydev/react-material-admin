@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
-import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 // Externals
 import classNames from 'classnames';
@@ -18,10 +17,7 @@ import {
   Toolbar,
   Typography,
   Select,
-  Input,
-  Checkbox,
   MenuItem,
-  ListItemText
 } from '@material-ui/core';
 
 // Material icons
@@ -116,47 +112,10 @@ class Topbar extends Component {
       isSidebarOpen,
       onToggleSidebar
     } = this.props;
-    const { notifications, notificationsCount, notificationsEl, personName, setPersonName, selectedLang } = this.state;
+    const { notifications, notificationsCount, notificationsEl, selectedLang } = this.state;
 
     const rootClassName = classNames(classes.root, className);
     const showNotifications = Boolean(notificationsEl);
-
-    function getStyles(name, personName, theme) {
-      return {
-        fontWeight:
-            personName.indexOf(name) === -1
-              ? theme.typography.fontWeightRegular
-              : theme.typography.fontWeightMedium,
-      };
-    }
-
-    function handleChange(event) {
-      setPersonName(event.target.value);
-    }
-
-    const ITEM_HEIGHT = 48;
-    const ITEM_PADDING_TOP = 8;
-    const MenuProps = {
-      PaperProps: {
-        style: {
-          maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-          width: 250,
-        },
-      },
-    };
-
-    const names = [
-      'Oliver Hansen',
-      'Van Henry',
-      'April Tucker',
-      'Ralph Hubbard',
-      'Omar Alexander',
-      'Carlos Abbott',
-      'Miriam Wagner',
-      'Bradley Wilkerson',
-      'Virginia Andrews',
-      'Kelly Snyder',
-    ];
 
     return (
       <Fragment>

@@ -8,14 +8,14 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core';
 
 // Material components
-import { Avatar, Typography, Button, LinearProgress } from '@material-ui/core';
+import {Typography, Button, LinearProgress } from '@material-ui/core';
 
 // Shared components
 import { Portlet, PortletContent, PortletFooter } from 'components';
 import companyLogo from '../../logo-mandalina-suites.png';
+
 // Component styles
 import styles from './styles';
-import BookingIcon from "../../../Reviews/ReviewCard/icons/booking_icon.png";
 
 class AccountProfile extends Component {
   render() {

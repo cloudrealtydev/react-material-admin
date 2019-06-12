@@ -14,22 +14,16 @@ import { withStyles } from '@material-ui/core';
 import {
   Grid,
   Button,
-  IconButton,
   CircularProgress,
   TextField,
   Typography
 } from '@material-ui/core';
 
-// Material icons
-import { ArrowBack as ArrowBackIcon } from '@material-ui/icons';
-
-// Shared components
-import { Facebook as FacebookIcon, Google as GoogleIcon } from 'icons';
 
 // Component styles
 import styles from './styles';
 
-import SweetAlert from 'sweetalert2';
+/*import SweetAlert from 'sweetalert2';*/
 
 // Form validation schema
 import schema from './schema';
@@ -112,8 +106,6 @@ class SignIn extends Component {
     }
   };
 
-
-
   render() {
     const { classes } = this.props;
     const {
@@ -128,12 +120,12 @@ class SignIn extends Component {
     const showEmailError = touched.email && errors.email;
     const showPasswordError = touched.password && errors.password;
 
-    SweetAlert.fire({
+/*    SweetAlert.fire({
       title: 'Error!',
       text: 'Do you want to continue',
       type: 'error',
       confirmButtonText: 'Cool'
-    });
+    });*/
 
 
     return (
