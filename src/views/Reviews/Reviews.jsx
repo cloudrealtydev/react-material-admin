@@ -65,7 +65,7 @@ class Reviews extends Component {
 
     if (reviews.length === 0) {
       return (
-        <Typography variant="h6">There are no reviews available</Typography>
+        <Typography variant="h3">There are no reviews available.</Typography>
       );
     }
 
