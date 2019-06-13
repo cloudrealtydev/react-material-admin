@@ -11,28 +11,21 @@ import { withStyles } from '@material-ui/core';
 
 // Material components
 import {
-  Badge,
   IconButton,
-  Popover,
   Toolbar,
   Typography,
   Select,
-  MenuItem,
+  MenuItem
 } from '@material-ui/core';
 
 // Material icons
 import {
   Menu as MenuIcon,
-  Close as CloseIcon,
-  NotificationsOutlined as NotificationsIcon,
-  Input as InputIcon
+  Close as CloseIcon
 } from '@material-ui/icons';
 
 // Shared services
 import { getNotifications } from 'services/notification';
-
-// Custom components
-import { NotificationList } from './components';
 
 import TR from './icons/TR_flag.png';
 import EN from './icons/US_flag.png';
@@ -40,6 +33,7 @@ import EN from './icons/US_flag.png';
 import styles from './styles';
 
 class Topbar extends Component {
+
   signal = true;
 
   state = {
@@ -118,6 +112,10 @@ class Topbar extends Component {
 
     const rootClassName = classNames(classes.root, className);
 
+   /* this.setState({
+      selectedLang: '10'
+    });*/
+
     this.state.selectedLang='10';
 
     /*const showNotifications = Boolean(notificationsEl);*/
@@ -139,25 +137,6 @@ class Topbar extends Component {
             >
               {title}
             </Typography>
-            {/*<IconButton
-              className={classes.notificationsButton}
-              onClick={this.handleShowNotifications}
-            >
-              <Badge
-                badgeContent={notificationsCount}
-                color="primary"
-                variant="dot"
-              >
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              className={classes.signOutButton}
-              onClick={this.handleSignOut}
-            >
-              <InputIcon />
-            </IconButton>*/}
-
             <FormControl className={classes.formControl}>
               <Select
                 onChange={event => this.handleChangeLang(event.target.value)}
@@ -172,24 +151,6 @@ class Topbar extends Component {
 
           </Toolbar>
         </div>
-        {/*<Popover
-          anchorEl={notificationsEl}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center'
-          }}
-          onClose={this.handleCloseNotifications}
-          open={showNotifications}
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'center'
-          }}
-        >
-          <NotificationList
-            notifications={notifications}
-            onSelect={this.handleCloseNotifications}
-          />
-        </Popover>*/}
       </Fragment>
     );
   }
