@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
 import {CircularProgress, Grid, Typography} from '@material-ui/core';
 import { Dashboard as DashboardLayout } from 'layouts';
-import { getReviews } from 'services/reviews';
+/*import { getReviews } from 'services/reviews';*/
+import { getReviews } from 'services/reviews/mock-data';
 import ReviewsToolbar from './ReviewsToolbar/ReviewsToolbar';
 import ReviewCard from './ReviewCard/ReviewCard';
 import styles from './styles';
@@ -71,10 +72,10 @@ class Reviews extends Component {
 
     return (
       <Grid container spacing={3}>
-        {reviews.map(product => (
-          <Grid item key={product.id} lg={12} md={12} xs={12} sm={12}>
+        {reviews.map(review => (
+          <Grid item key={review.id} lg={12} md={12} xs={12} sm={12}>
             <Link to="#">
-              <ReviewCard product={product} />
+              <ReviewCard review={review} />
             </Link>
           </Grid>
         ))}

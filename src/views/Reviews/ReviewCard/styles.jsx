@@ -1,6 +1,7 @@
 export default theme => ({
   imageWrapper: {
     width: '4rem',
+    height: '4rem',
     borderRadius: '0.3125rem',
     display: 'flex',
     alignItems: 'center',

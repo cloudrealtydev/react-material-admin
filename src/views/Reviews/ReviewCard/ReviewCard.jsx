@@ -11,54 +11,92 @@ import styles from './styles';
 
 class ReviewCard extends Component {
   render() {
-    const { classes, product } = this.props;
+    const { classes, review } = this.props;
 
     let sourceSite;
-    if (product.source === 'Booking.com') {
+    if (review.source === 'Booking.com') {
       sourceSite = <img alt="Booking.com" className={classes.site} src={BookingIcon}/>;
-    } else if (product.source === 'TripAdvisor') {
+    } else if (review.source === 'TripAdvisor') {
       sourceSite = <img alt="TripAdvisor" className={classes.site} src={TripAdvisor}/>;
     }
 
     return (
-      <Card className={classes.card}>
+        <Card className={classes.card}>
+          <CardContent>
+            <div className={classes.details}>
+              <div className={classes.imageWrapper}>
+                <Avatar className={classes.avatar} src={review.avatarUrl}/>
+              </div>
+
+              <div className={classes.locationDetails}>
+                <Typography className={classes.title} variant="h4">
+                  {review.userName}
+                </Typography>
+                <Typography className={classes.location} variant="h4">
+                  <LocationOnIcon className={classes.icon} />
+                  {review.location}
+                </Typography>
+                <Typography className={classes.location} variant="h4">
+                  {review.date}
+                </Typography>
+              </div>
+
+              <div className={classes.siteDetails}>
+                {sourceSite}
+                <Typography className={classes.location} variant="h4">
+                  {review.source}
+                </Typography>
+                <Typography className={classes.title} variant="h4">
+                  {review.score}
+                </Typography>
+              </div>
+            </div>
+
+            <div>
+              <Typography className={classes.description} variant="body1">
+                {review.review}
+              </Typography>
+            </div>
+          </CardContent>
+        </Card>
+        /*<Card className={classes.card}>
         <CardContent>
-          <div className={classes.details}>
-            <div className={classes.imageWrapper}>
-              <Avatar className={classes.avatar} src={product.avatarUrl}/>
-            </div>
+        <div className={classes.details}>
+        <div className={classes.imageWrapper}>
+        <Avatar className={classes.avatar} src={review.avatarUrl}/>
+  </div>
 
-            <div className={classes.locationDetails}>
-              <Typography className={classes.title} variant="h4">
-                {product.userName}
-              </Typography>
-              <Typography className={classes.location} variant="h4">
-                <LocationOnIcon className={classes.icon} />
-                {product.location}
-              </Typography>
-              <Typography className={classes.location} variant="h4">
-                {product.date}
-              </Typography>
-            </div>
+  <div className={classes.locationDetails}>
+        <Typography className={classes.title} variant="h4">
+        {review.reviewer.name}
+  </Typography>
+  <Typography className={classes.location} variant="h4">
+        <LocationOnIcon className={classes.icon} />
+    {review.location}
+  </Typography>
+  <Typography className={classes.location} variant="h4">
+        {review.created_timestamp}
+  </Typography>
+  </div>
 
-            <div className={classes.siteDetails}>
-              {sourceSite}
-              <Typography className={classes.location} variant="h4">
-                {product.source}
-              </Typography>
-              <Typography className={classes.title} variant="h4">
-                {product.score}
-              </Typography>
-            </div>
-          </div>
+    <div className={classes.siteDetails}>
+      {sourceSite}
+      <Typography className={classes.location} variant="h4">
+        {review.source}
+      </Typography>
+      <Typography className={classes.title} variant="h4">
+        {review.scoring.review_score}
+      </Typography>
+    </div>
+    </div>
 
-          <div>
-            <Typography className={classes.description} variant="body1">
-              {product.review}
-            </Typography>
-          </div>
-        </CardContent>
-      </Card>
+    <div>
+      <Typography className={classes.description} variant="body1">
+        {review.content.headline}
+      </Typography>
+    </div>
+    </CardContent>
+  </Card>*/
     );
   }
 }
