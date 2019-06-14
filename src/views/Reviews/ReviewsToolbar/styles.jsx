@@ -20,5 +20,10 @@ export default theme => ({
   inputField: {
     margin: theme.spacing(1),
     flexBasis: 200,
-  }
+  },
+  site: {
+    color: 'gray',
+    height: '1.1rem',
+    marginRight: theme.spacing(1)
+  },
 });

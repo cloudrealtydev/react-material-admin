@@ -17,6 +17,10 @@ import styles from './styles';
 
 import SearchIcon from '@material-ui/icons/SearchOutlined';
 
+import GoogleIcon from '../ReviewCard/icons/google.jpg';
+import BookingIcon from '../ReviewCard/icons/booking_icon.png';
+import TripAdvisorIcon from '../ReviewCard/icons/tripadvisor_icon.png';
+
 class ReviewsToolbar extends Component {
 
   state = {
@@ -70,6 +74,7 @@ class ReviewsToolbar extends Component {
               <Typography
                 variant="h6"
               >
+                <img alt="Google" className={classes.site} src={GoogleIcon}/>
                 Google
               </Typography>
             </MenuItem>
@@ -78,6 +83,7 @@ class ReviewsToolbar extends Component {
               <Typography
                 variant="h6"
               >
+                <img alt="Google" className={classes.site} src={BookingIcon}/>
                 Booking.com
               </Typography>
             </MenuItem>
@@ -86,6 +92,7 @@ class ReviewsToolbar extends Component {
               <Typography
                 variant="h6"
               >
+                <img alt="Google" className={classes.site} src={TripAdvisorIcon}/>
                 TripAdvisor
               </Typography>
             </MenuItem>

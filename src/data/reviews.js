@@ -26,7 +26,7 @@ export default [
     avatarUrl: '/images/avatars/avatar_4.png',
     location: 'London, United Kingdom',
     score: '4/5',
-    source: 'TripAdvisor',
+    source: 'Google',
     date:'Reviewed: 14 May 2019'
   }
 ];
