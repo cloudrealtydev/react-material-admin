@@ -59,44 +59,6 @@ class ReviewCard extends Component {
             </div>
           </CardContent>
         </Card>
-        /*<Card className={classes.card}>
-        <CardContent>
-        <div className={classes.details}>
-        <div className={classes.imageWrapper}>
-        <Avatar className={classes.avatar} src={review.avatarUrl}/>
-  </div>
-
-  <div className={classes.locationDetails}>
-        <Typography className={classes.title} variant="h4">
-        {review.reviewer.name}
-  </Typography>
-  <Typography className={classes.location} variant="h4">
-        <LocationOnIcon className={classes.icon} />
-    {review.location}
-  </Typography>
-  <Typography className={classes.location} variant="h4">
-        {review.created_timestamp}
-  </Typography>
-  </div>
-
-    <div className={classes.siteDetails}>
-      {sourceSite}
-      <Typography className={classes.location} variant="h4">
-        {review.source}
-      </Typography>
-      <Typography className={classes.title} variant="h4">
-        {review.scoring.review_score}
-      </Typography>
-    </div>
-    </div>
-
-    <div>
-      <Typography className={classes.description} variant="body1">
-        {review.content.headline}
-      </Typography>
-    </div>
-    </CardContent>
-  </Card>*/
     );
   }
 }
