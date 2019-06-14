@@ -25,7 +25,6 @@ export default theme => ({
     overflow: 'auto',
     height: '7.5rem',
     textOverflow: 'ellipsis',
-    color: theme.palette.text.secondary,
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit
   },
