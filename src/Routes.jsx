@@ -6,9 +6,6 @@ import Dashboard from './views/Dashboard';
 import Reviews from './views/Reviews/Reviews';
 import Home from './views/Home';
 import ProductList from './views/ProductList';
-import UserList from './views/UserList';
-import Typography from './views/Typography';
-import Icons from './views/Icons';
 import Account from './views/Account';
 import Settings from './views/Settings';
 import SignUp from './views/SignUp';
@@ -41,24 +38,9 @@ export default class Routes extends Component {
           path="/reviews"
         />
         <Route
-          component={UserList}
-          exact
-          path="/users"
-        />
-        <Route
           component={ProductList}
           exact
           path="/products"
-        />
-        <Route
-          component={Typography}
-          exact
-          path="/typography"
-        />
-        <Route
-          component={Icons}
-          exact
-          path="/icons"
         />
         <Route
           component={Account}
