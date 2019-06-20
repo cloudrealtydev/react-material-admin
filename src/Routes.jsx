@@ -5,7 +5,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Dashboard from './views/Dashboard';
 import Reviews from './views/Reviews/Reviews';
 import Home from './views/Home';
-import ProductList from './views/ProductList';
 import Account from './views/Account';
 import Settings from './views/Settings';
 import SignUp from './views/SignUp';
@@ -36,11 +35,6 @@ export default class Routes extends Component {
           component={Reviews}
           exact
           path="/reviews"
-        />
-        <Route
-          component={ProductList}
-          exact
-          path="/products"
         />
         <Route
           component={Account}

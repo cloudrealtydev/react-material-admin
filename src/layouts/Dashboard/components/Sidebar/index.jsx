@@ -22,10 +22,7 @@ import {
 // Material icons
 import {
   DashboardOutlined as DashboardIcon,
-  ShoppingBasketOutlined as ShoppingBasketIcon,
   LockOpenOutlined as LockOpenIcon,
-  TextFields as TextFieldsIcon,
-  ImageOutlined as ImageIcon,
   InfoOutlined as InfoIcon,
   AccountBoxOutlined as AccountBoxIcon,
   SettingsOutlined as SettingsIcon,
@@ -107,20 +104,6 @@ class Sidebar extends Component {
             <ListItemText
               classes={{ primary: classes.listItemText }}
               primary="Reviews"
-            />
-          </ListItem>
-          <ListItem
-            activeClassName={classes.activeListItem}
-            className={classes.listItem}
-            component={NavLink}
-            to="/products"
-          >
-            <ListItemIcon className={classes.listItemIcon}>
-              <ShoppingBasketIcon />
-            </ListItemIcon>
-            <ListItemText
-              classes={{ primary: classes.listItemText }}
-              primary="Products"
             />
           </ListItem>
           <ListItem
