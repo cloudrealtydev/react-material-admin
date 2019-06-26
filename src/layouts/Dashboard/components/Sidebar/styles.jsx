@@ -84,5 +84,13 @@ export default theme => ({
   listDivider: {
     marginBottom: theme.spacing.unit * 2,
     marginTop: theme.spacing.unit * 2
-  }
+  },
+  formControl: {
+    margin: theme.spacing(2),
+    minWidth: 60,
+    marginRight: 'auto'
+  },
+  icon: {
+    width: '24px',
+  },
 });

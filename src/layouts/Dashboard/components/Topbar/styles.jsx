@@ -23,14 +23,6 @@ export default theme => ({
   signOutButton: {
     marginLeft: theme.spacing.unit
   },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 60,
-    marginLeft: 'auto'
-  },
-  icon: {
-    width: '24px',
-  },
   optionText: {
     marginTop: '2px',
     marginLeft: '5px',

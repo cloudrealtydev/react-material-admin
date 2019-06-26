@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core';
+import {MenuItem, Select, withStyles} from '@material-ui/core';
 import {Divider, List, ListItem, ListItemIcon, ListItemText, ListSubheader, Typography} from '@material-ui/core';
+import FormControl from '@material-ui/core/FormControl/FormControl';
 
 import {
   DashboardOutlined as DashboardIcon,
@@ -15,12 +16,24 @@ import {
   CommentOutlined as ReviewsIcon
 } from '@material-ui/icons';
 
+
 import styles from './styles';
+import TR from '../Sidebar/icons/TR_flag.png';
+import EN from '../Sidebar/icons/US_flag.png';
 
 class Sidebar extends Component {
+
+  state = { selectedLang: 'EN'};
+
+  handleChangeLang = (value) => {
+    this.setState({
+      selectedLang: value
+    });
+  };
+
   render() {
     const { classes, className } = this.props;
-
+    const {selectedLang } = this.state;
     const rootClassName = classNames(classes.root, className);
 
     return (
@@ -93,6 +106,18 @@ class Sidebar extends Component {
             <ListItemText classes={{ primary: classes.listItemText }} primary="Customer support"/>
           </ListItem>
         </List>
+
+        <FormControl className={classes.formControl}>
+          <Select
+            onChange={event => this.handleChangeLang(event.target.value)}
+            value={selectedLang}
+          >
+            <MenuItem value={'TR'}><img alt="TR" className={classes.icon} src={TR}/>
+            </MenuItem>
+            <MenuItem value={'EN'} ><img alt="EN" className={classes.icon} src={EN}/>
+            </MenuItem>
+          </Select>
+        </FormControl>
 
       </nav>
     );
