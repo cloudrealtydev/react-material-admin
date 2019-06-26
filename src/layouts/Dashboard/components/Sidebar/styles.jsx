@@ -86,7 +86,7 @@ export default theme => ({
     marginTop: theme.spacing.unit * 2
   },
   formControl: {
-    margin: theme.spacing(2),
+    marginLeft: theme.spacing(2),
     minWidth: 60,
     marginRight: 'auto'
   },
