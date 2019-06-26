@@ -1,8 +1,8 @@
-## Hotel Insighter
+## React Material Admin
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-Get your hotel's customer insights from channels such as Booking.com, TripAdvisor, Google etc.
+React Material Admin
 
 ## Quick start
 
