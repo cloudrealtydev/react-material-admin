@@ -2,7 +2,7 @@
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-Get insights from channels such as Booking.com, TripAdvisor, Google etc.
+Get your hotel's customer insights from channels such as Booking.com, TripAdvisor, Google etc.
 
 ## Quick start
 
@@ -18,7 +18,7 @@ Get insights from channels such as Booking.com, TripAdvisor, Google etc.
 
 - [Github Issues Page](https://github.com/AliKemalSaglam/react-material-admin/issues)
 
-## Design Files
+## Licenses
 
 - Licensed under MIT (https://github.com/devias-io/react-material-dashboard/blob/master/LICENSE.md)
 
