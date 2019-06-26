@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-
-// Externals
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
-// Material helpers
 import { withStyles } from '@material-ui/core';
-
-// Component styles
 import styles from './styles';
 
 class ProductsToolbar extends Component {

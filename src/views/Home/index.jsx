@@ -1,29 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
-// Externals
 import PropTypes from 'prop-types';
-
-// Material helpers
 import { withStyles } from '@material-ui/core';
-
-// Material components
-import {
-  CircularProgress,
-  Grid,
-  Typography
-} from '@material-ui/core';
-
-// Shared layouts
+import {CircularProgress, Grid, Typography} from '@material-ui/core';
 import { Dashboard as DashboardLayout } from 'layouts';
-
-// Shared services
 import { getProducts } from 'services/channel';
-
-// Custom components
 import { ProductsToolbar, ProductCard } from './components';
 
-// Component styles
 import styles from './styles';
 
 class Channels extends Component {
