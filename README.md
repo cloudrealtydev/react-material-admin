@@ -24,4 +24,4 @@ React Material Admin
 
 ## Contact Us
 
-- Email Us: alkmlsglm@gmail.com, ezgitetik92@gmail.com
+- Email Us: 
