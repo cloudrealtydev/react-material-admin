@@ -22,7 +22,7 @@ const styles = theme => ({
   },
 
   logoImage: {
-      width: '18px'
+    width: '18px'
   }
 });
 
@@ -42,11 +42,11 @@ class Footer extends Component {
           &copy; Insighter Inc. 2019
         </Typography>
         <Typography variant="caption">
-            <img
-                alt="logo"
-                className={classes.logoImage}
-                src="/images/logos/origami-bird.png"
-            />
+          <img
+            alt="logo"
+            className={classes.logoImage}
+            src="/images/logos/origami-bird.png"
+          />
           Created with love for the environment by designers and developers who
           love to work together in Istanbul office!
         </Typography>
