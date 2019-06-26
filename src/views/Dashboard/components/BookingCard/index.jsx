@@ -1,27 +1,14 @@
 import React, { Component } from 'react';
-
-// Externals
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-
-// Material helpers
 import {LinearProgress, withStyles} from '@material-ui/core';
-
-// Material components
 import { Typography } from '@material-ui/core';
-
-// Material icons
-import {
-  ArrowDownward as ArrowDownwardIcon
-} from '@material-ui/icons';
-
-// Shared components
+import { ArrowDownward as ArrowDownwardIcon } from '@material-ui/icons';
 import { Paper } from 'components';
-import BookingIcon from '../icons/booking_icon.png'
-// Component styles
+import BookingIcon from './booking_icon.png'
 import styles from './styles';
 
-class Budget extends Component {
+class BookingCard extends Component {
   render() {
     const { classes, className, ...rest } = this.props;
 
@@ -94,9 +81,9 @@ class Budget extends Component {
   }
 }
 
-Budget.propTypes = {
+BookingCard.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Budget);
+export default withStyles(styles)(BookingCard);

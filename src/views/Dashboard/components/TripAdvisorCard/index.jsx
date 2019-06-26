@@ -14,8 +14,8 @@ import { Typography } from '@material-ui/core';
 import {
   ArrowUpward as ArrowUpwardIcon,
 } from '@material-ui/icons';
-import TripAdvisorIcon from '../icons/tripadvisor_icon.png'
-import TripAdvisorRatingIcon from '../../trip-advisor-rating.svg'
+import TripAdvisorIcon from './tripadvisor_icon.png'
+import TripAdvisorRatingIcon from './trip-advisor-rating.svg'
 
 // Shared components
 import { Paper } from 'components';
@@ -23,7 +23,7 @@ import { Paper } from 'components';
 // Component styles
 import styles from './styles';
 
-class Users extends Component {
+class TripAdvisorCard extends Component {
   render() {
     const { classes, className, ...rest } = this.props;
 
@@ -91,9 +91,9 @@ class Users extends Component {
   }
 }
 
-Users.propTypes = {
+TripAdvisorCard.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Users);
+export default withStyles(styles)(TripAdvisorCard);
