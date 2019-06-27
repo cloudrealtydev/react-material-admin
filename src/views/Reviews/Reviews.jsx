@@ -18,7 +18,7 @@ class Reviews extends Component {
     reviews: [],
     reviewsTotal: 0,
     error: null,
-    source: 'booking'
+    source: ''
   };
 
   async getReviews() {
@@ -31,7 +31,7 @@ class Reviews extends Component {
       else if (this.state.source === 'google')
         reviews = await ReviewServices.getGoogleReviews();
       else
-        reviews = await ReviewServices.getBookingReviews(); // get all reviews here
+        reviews = await ReviewServices.getAllReviews();
 
       const reviewsTotal = reviews.length;
 
@@ -91,13 +91,19 @@ class Reviews extends Component {
     );
   }
 
+  handleSourceChange = (source) => {
+    this.setState({ source: source}, () => {
+      this.getReviews();
+    });
+  };
+
   render() {
     const { classes } = this.props;
 
     return (
       <DashboardLayout title="Reviews">
         <div className={classes.root}>
-          <ReviewsToolbar source={this.state.source}/>
+          <ReviewsToolbar handleSource={this.handleSourceChange}/>
           <div className={classes.content}>{this.renderReviews()}</div>
         </div>
       </DashboardLayout>

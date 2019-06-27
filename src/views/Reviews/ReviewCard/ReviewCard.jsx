@@ -82,8 +82,7 @@ class ReviewCard extends Component {
 
 ReviewCard.propTypes = {
   className: PropTypes.string,
-  classes: PropTypes.object.isRequired,
-  product: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(ReviewCard);

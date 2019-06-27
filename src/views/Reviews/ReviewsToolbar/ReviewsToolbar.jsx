@@ -33,13 +33,13 @@ class ReviewsToolbar extends Component {
     this.setState({
       selectedSourceOptions: value
     });
+    this.props.handleSource(value);
   };
 
   handleChangeSortOptions = (value) => {
     this.setState({
       selectedSortOptions: value
     });
-    this.props.source(value);
   };
 
   handleChangeSearchText = (value) => {
@@ -163,7 +163,7 @@ class ReviewsToolbar extends Component {
 ReviewsToolbar.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
-  source: () => {}
+  handleSource: () => {}
 };
 
 export default withStyles(styles)(ReviewsToolbar);

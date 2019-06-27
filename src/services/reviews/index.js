@@ -19,13 +19,13 @@ class ReviewServices {
       });
   }
 
-    static async getAllReviews() {
-        return await axios.get('http://localhost:3001/api/combinedReview?source=all')
-            .then(response => response.data)
-            .catch(error => {
-                console.error('Error during get all reviews:', error);
-            });
-    }
+  static async getAllReviews() {
+    return await axios.get('http://localhost:3001/api/combinedReview?source=all')
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error during get all reviews:', error);
+      });
+  }
 
 
 }
