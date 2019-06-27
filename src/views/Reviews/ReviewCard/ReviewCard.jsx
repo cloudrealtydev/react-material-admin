@@ -31,7 +31,9 @@ class ReviewCard extends Component {
           <div className={classes.details}>
 
             <div className={classes.imageWrapper}>
-              <Avatar className={classes.avatar} src={review.avatarUrl}/>
+              <Avatar className={classes.avatar} src={review.avatarUrl}>
+                {review.name.charAt(0)}
+              </Avatar>
             </div>
 
             <div className={classes.locationDetails}>
@@ -41,7 +43,7 @@ class ReviewCard extends Component {
               </Typography>
 
               <Typography className={classes.location} variant="h4">
-                <LocationOnIcon className={classes.icon} />
+                {review.location && <LocationOnIcon className={classes.icon} />}
                 {review.location}
               </Typography>
 
