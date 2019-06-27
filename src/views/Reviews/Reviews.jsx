@@ -36,7 +36,8 @@ class Reviews extends Component {
           limit
         });
       }
-    } catch (error) {
+    }
+    catch (error) {
       if (this.signal) {
         this.setState({isLoading: false, error});
       }
@@ -55,6 +56,7 @@ class Reviews extends Component {
 
   renderReviews() {
     const { classes } = this.props;
+
     const { isLoading, reviews } = this.state;
 
     if (isLoading) {
