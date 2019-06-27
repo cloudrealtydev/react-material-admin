@@ -11,9 +11,24 @@ import styles from './styles';
 
 
 class ReviewCard extends Component {
+
+    formatDate(date) {
+        var monthNames = [
+            "January", "February", "March",
+            "April", "May", "June", "July",
+            "August", "September", "October",
+            "November", "December"
+        ];
+
+        var day = date.getDate();
+        var monthIndex = date.getMonth();
+        var year = date.getFullYear();
+
+        return day + ' ' + monthNames[monthIndex] + ' ' + year;
+    };
+
   render() {
     const { classes, review } = this.props;
-    console.log(review);
     let sourceSite;
     if (review.source === 'Booking.com') {
       sourceSite = <img alt="Booking.com" className={classes.site} src={BookingIcon}/>;
@@ -48,7 +63,7 @@ class ReviewCard extends Component {
               </Typography>
 
               <Typography className={classes.location} variant="h4">
-                {review.date}
+                {this.formatDate(new Date(review.time))}
               </Typography>
 
             </div>
