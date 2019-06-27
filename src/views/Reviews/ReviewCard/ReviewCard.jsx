@@ -13,7 +13,6 @@ import styles from './styles';
 class ReviewCard extends Component {
   render() {
     const { classes, review } = this.props;
-    console.log(review);
     let sourceSite;
     if (review.source === 'Booking.com') {
       sourceSite = <img alt="Booking.com" className={classes.site} src={BookingIcon}/>;

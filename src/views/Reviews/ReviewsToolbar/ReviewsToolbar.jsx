@@ -24,7 +24,7 @@ import TripAdvisorIcon from '../ReviewCard/icons/tripadvisor_icon.png';
 class ReviewsToolbar extends Component {
 
   state = {
-    selectedSourceOptions: '0',
+    selectedSourceOptions: 'all',
     selectedSortOptions: '0',
     searchText:'',
   };
@@ -39,6 +39,7 @@ class ReviewsToolbar extends Component {
     this.setState({
       selectedSortOptions: value
     });
+    this.props.source(value);
   };
 
   handleChangeSearchText = (value) => {
@@ -58,11 +59,11 @@ class ReviewsToolbar extends Component {
       <div className={rootClassName}>
         <FormControl className={classes.formControl}>
           <Select
+            input={<OutlinedInput/>}
             onChange={event => this.handleChangeSourceOptions(event.target.value)}
             value={selectedSourceOptions}
-            input={<OutlinedInput/>}
           >
-            <MenuItem value={0}>
+            <MenuItem value={'all'}>
               <Typography
                 variant="h6"
               >
@@ -70,7 +71,7 @@ class ReviewsToolbar extends Component {
               </Typography>
             </MenuItem>
 
-            <MenuItem value={1}>
+            <MenuItem value={'google'}>
               <Typography
                 variant="h6"
               >
@@ -79,20 +80,20 @@ class ReviewsToolbar extends Component {
               </Typography>
             </MenuItem>
 
-            <MenuItem value={2}>
+            <MenuItem value={'booking'}>
               <Typography
                 variant="h6"
               >
-                <img alt="Google" className={classes.site} src={BookingIcon}/>
+                <img alt="Booking" className={classes.site} src={BookingIcon}/>
                 Booking.com
               </Typography>
             </MenuItem>
 
-            <MenuItem value={3}>
+            <MenuItem value={'tripAdvisor'}>
               <Typography
                 variant="h6"
               >
-                <img alt="Google" className={classes.site} src={TripAdvisorIcon}/>
+                <img alt="tripAdvisor" className={classes.site} src={TripAdvisorIcon}/>
                 TripAdvisor
               </Typography>
             </MenuItem>
@@ -101,9 +102,9 @@ class ReviewsToolbar extends Component {
         </FormControl>
         <FormControl className={classes.formControl}>
           <Select
+            input={<OutlinedInput/>}
             onChange={event => this.handleChangeSortOptions(event.target.value)}
             value={selectedSortOptions}
-            input={<OutlinedInput/>}
           >
             <MenuItem value={0}>
               <Typography
@@ -139,21 +140,21 @@ class ReviewsToolbar extends Component {
 
           </Select>
         </FormControl>
-          <TextField
-            id="outlined-adornment-weight"
-            className={classes.inputField}
-            variant="outlined"
-            placeholder="Yorumlarda ara"
-            value={searchText}
-            onChange={event => this.handleChangeSearchText(event.target.value)}
-            InputProps={{
-              startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchIcon />
-                  </InputAdornment>
-              )
-            }}
-          />
+        <TextField
+          className={classes.inputField}
+          id="outlined-adornment-weight"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            )
+          }}
+          onChange={event => this.handleChangeSearchText(event.target.value)}
+          placeholder="Yorumlarda ara"
+          value={searchText}
+          variant="outlined"
+        />
       </div>
     );
   }
@@ -161,7 +162,8 @@ class ReviewsToolbar extends Component {
 
 ReviewsToolbar.propTypes = {
   className: PropTypes.string,
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  source: () => {}
 };
 
 export default withStyles(styles)(ReviewsToolbar);
