@@ -15,17 +15,24 @@ class Reviews extends Component {
 
   state = {
     isLoading: false,
-    limit: 6,
     reviews: [],
     reviewsTotal: 0,
-    error: null
+    error: null,
+    source: 'booking'
   };
 
-  async getReviews(limit) {
+  async getReviews() {
     try {
       this.setState({ isLoading: true });
 
-      const reviews = await ReviewServices.getBookingReviews();
+      let reviews;
+      if (this.state.source === 'booking')
+        reviews = await ReviewServices.getBookingReviews();
+      else if (this.state.source === 'google')
+        reviews = await ReviewServices.getGoogleReviews();
+      else
+        reviews = await ReviewServices.getBookingReviews(); // get all reviews here
+
       const reviewsTotal = reviews.length;
 
       if (this.signal) {
@@ -33,7 +40,6 @@ class Reviews extends Component {
           isLoading: false,
           reviews,
           reviewsTotal,
-          limit
         });
       }
     }
@@ -46,8 +52,7 @@ class Reviews extends Component {
 
   componentWillMount() {
     this.signal = true;
-    const { limit } = this.state;
-    this.getReviews(limit);
+    this.getReviews();
   }
 
   componentWillUnmount() {
@@ -92,7 +97,7 @@ class Reviews extends Component {
     return (
       <DashboardLayout title="Reviews">
         <div className={classes.root}>
-          <ReviewsToolbar />
+          <ReviewsToolbar source={this.state.source}/>
           <div className={classes.content}>{this.renderReviews()}</div>
         </div>
       </DashboardLayout>
