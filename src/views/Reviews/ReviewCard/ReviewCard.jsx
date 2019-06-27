@@ -13,7 +13,7 @@ import styles from './styles';
 class ReviewCard extends Component {
   render() {
     const { classes, review } = this.props;
-
+    console.log(review);
     let sourceSite;
     if (review.source === 'Booking.com') {
       sourceSite = <img alt="Booking.com" className={classes.site} src={BookingIcon}/>;
@@ -37,7 +37,7 @@ class ReviewCard extends Component {
             <div className={classes.locationDetails}>
 
               <Typography className={classes.title} variant="h4">
-                {review.userName}
+                {review.name}
               </Typography>
 
               <Typography className={classes.location} variant="h4">
@@ -69,7 +69,7 @@ class ReviewCard extends Component {
           <div>
 
             <Typography className={classes.description} variant="body1">
-              {review.review}
+              {review.comment}
             </Typography>
 
           </div>

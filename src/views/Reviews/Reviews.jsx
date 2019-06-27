@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core';
 import {CircularProgress, Grid, Typography} from '@material-ui/core';
 import { Dashboard as DashboardLayout } from 'layouts';
 /*import { getReviews } from 'services/reviews';*/
-import { getReviews } from 'services/reviews/mock-data';
+import ReviewServices from '../../services/reviews';
 import ReviewsToolbar from './ReviewsToolbar/ReviewsToolbar';
 import ReviewCard from './ReviewCard/ReviewCard';
 import styles from './styles';
@@ -25,7 +25,8 @@ class Reviews extends Component {
     try {
       this.setState({ isLoading: true });
 
-      const { reviews, reviewsTotal } = await getReviews(limit);
+      const reviews = await ReviewServices.getBookingReviews();
+      const reviewsTotal = reviews.length;
 
       if (this.signal) {
         this.setState({

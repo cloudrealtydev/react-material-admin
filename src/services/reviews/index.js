@@ -1,19 +1,25 @@
 import axios from 'axios';
 
-export const getReviews = (limit = 6) => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      let reviews;
-      axios.get('http://localhost:3001/api/bookingReview',{headers:{}})
-          .then(res => {
-              console.log(res.data[0].data.reviews);
-            reviews = res.data[0].data.reviews;
-            resolve({
-              reviews: reviews.slice(0, limit),
-              reviewsTotal: reviews.length
-            });
-          });
 
-    }, 1000);
-  });
-};
+class ReviewServices {
+
+  static async getBookingReviews() {
+    return await axios.get('http://localhost:3001/api/combinedReview?source=booking')
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error during get review:', error);
+      });
+  }
+
+  static async getGoogleReviews() {
+    return await axios.get('http://localhost:3001/api/combinedReview?source=google')
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error during get review:', error);
+      });
+  }
+
+
+}
+
+export default ReviewServices;
