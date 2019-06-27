@@ -46,7 +46,8 @@ export default theme => ({
     width: '100%',
     height: '100%',
     flexShrink: 0,
-    flexGrow: 0
+    flexGrow: 0,
+    backgroundColor: '#ffc107'
   },
   icon: {
     color: 'gray',

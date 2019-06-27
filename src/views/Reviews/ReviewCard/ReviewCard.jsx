@@ -11,6 +11,22 @@ import styles from './styles';
 
 
 class ReviewCard extends Component {
+
+    formatDate(date) {
+        var monthNames = [
+            "January", "February", "March",
+            "April", "May", "June", "July",
+            "August", "September", "October",
+            "November", "December"
+        ];
+
+        var day = date.getDate();
+        var monthIndex = date.getMonth();
+        var year = date.getFullYear();
+
+        return day + ' ' + monthNames[monthIndex] + ' ' + year;
+    };
+
   render() {
     const { classes, review } = this.props;
     let sourceSite;
@@ -30,7 +46,9 @@ class ReviewCard extends Component {
           <div className={classes.details}>
 
             <div className={classes.imageWrapper}>
-              <Avatar className={classes.avatar} src={review.avatarUrl}/>
+              <Avatar className={classes.avatar} src={review.avatarUrl}>
+                {review.name.charAt(0)}
+              </Avatar>
             </div>
 
             <div className={classes.locationDetails}>
@@ -40,12 +58,12 @@ class ReviewCard extends Component {
               </Typography>
 
               <Typography className={classes.location} variant="h4">
-                <LocationOnIcon className={classes.icon} />
+                {review.location && <LocationOnIcon className={classes.icon} />}
                 {review.location}
               </Typography>
 
               <Typography className={classes.location} variant="h4">
-                {review.date}
+                {this.formatDate(new Date(review.time))}
               </Typography>
 
             </div>
