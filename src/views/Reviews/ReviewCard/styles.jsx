@@ -9,6 +9,7 @@ export default theme => ({
   },
   details: {
     display: 'flex',
+    marginBottom: '1rem'
   },
   locationDetails: {
     display: 'flex',
@@ -33,8 +34,13 @@ export default theme => ({
     maxHeight: '15.625rem',
   },
   title: {
-    fontSize: 14,
-    marginLeft: '0.625rem'
+    fontSize: '16px',
+    marginLeft: '0.625rem',
+    fontWeight: '600'
+  },
+  name: {
+    fontSize: '14px',
+    marginLeft: '0.625rem',
   },
   location: {
     fontWeight: 100,

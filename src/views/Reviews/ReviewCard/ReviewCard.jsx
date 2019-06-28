@@ -54,7 +54,7 @@ class ReviewCard extends Component {
 
             <div className={classes.locationDetails}>
 
-              <Typography className={classes.title} variant="h4">
+              <Typography className={classes.name} variant="h4">
                 {review.name}
               </Typography>
 
