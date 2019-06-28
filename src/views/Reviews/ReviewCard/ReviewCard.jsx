@@ -12,20 +12,20 @@ import styles from './styles';
 
 class ReviewCard extends Component {
 
-    formatDate(date) {
-        var monthNames = [
-            "January", "February", "March",
-            "April", "May", "June", "July",
-            "August", "September", "October",
-            "November", "December"
-        ];
+  formatDate(date) {
+    var monthNames = [
+      'January', 'February', 'March',
+      'April', 'May', 'June', 'July',
+      'August', 'September', 'October',
+      'November', 'December'
+    ];
 
-        var day = date.getDate();
-        var monthIndex = date.getMonth();
-        var year = date.getFullYear();
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
 
-        return day + ' ' + monthNames[monthIndex] + ' ' + year;
-    };
+    return day + ' ' + monthNames[monthIndex] + ' ' + year;
+  }
 
   render() {
     const { classes, review } = this.props;

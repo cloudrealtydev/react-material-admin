@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core';
+import {withStyles} from '@material-ui/core';
 import {CircularProgress, Grid, Typography} from '@material-ui/core';
-import { Dashboard as DashboardLayout } from 'layouts';
+import {Dashboard as DashboardLayout} from 'layouts';
 /*import { getReviews } from 'services/reviews';*/
 import ReviewServices from '../../services/reviews';
 import ReviewsToolbar from './ReviewsToolbar/ReviewsToolbar';
@@ -18,20 +18,38 @@ class Reviews extends Component {
     reviews: [],
     reviewsTotal: 0,
     error: null,
-    source: ''
+    source: '',
+    sortBy: ''
   };
 
   async getReviews() {
     try {
-      this.setState({ isLoading: true });
+      this.setState({isLoading: true});
 
       let reviews;
-      if (this.state.source === 'booking')
-        reviews = await ReviewServices.getBookingReviews();
-      else if (this.state.source === 'google')
-        reviews = await ReviewServices.getGoogleReviews();
-      else
+      if (this.state.source === 'booking') {
+        if (this.state.sortBy === 'highestPoint') {
+          reviews = await ReviewServices.getBookingReviewsSortByHighestPoint();
+        } else if (this.state.sortBy === 'lowestPoint') {
+          reviews = await ReviewServices.getBookingReviewsSortByLowestPoint();
+        } else if (this.state.sortBy === 'mostRecent') {
+          reviews = await ReviewServices.getBookingReviewsSortByMostRecent();
+        } else {
+          reviews = await ReviewServices.getBookingReviews();
+        }
+      } else if (this.state.source === 'google') {
+        if (this.state.sortBy === 'highestPoint') {
+          reviews = await ReviewServices.getGoogleReviewsSortByHighestPoint();
+        } else if (this.state.sortBy === 'lowestPoint') {
+          reviews = await ReviewServices.getGoogleReviewsSortByLowestPoint();
+        } else if (this.state.sortBy === 'mostRecent') {
+          reviews = await ReviewServices.getGoogleReviewsSortByMostRecent();
+        } else {
+          reviews = await ReviewServices.getGoogleReviews();
+        }
+      } else {
         reviews = await ReviewServices.getAllReviews();
+      }
 
       const reviewsTotal = reviews.length;
 
@@ -42,8 +60,7 @@ class Reviews extends Component {
           reviewsTotal,
         });
       }
-    }
-    catch (error) {
+    } catch (error) {
       if (this.signal) {
         this.setState({isLoading: false, error});
       }
@@ -60,14 +77,14 @@ class Reviews extends Component {
   }
 
   renderReviews() {
-    const { classes } = this.props;
+    const {classes} = this.props;
 
-    const { isLoading, reviews } = this.state;
+    const {isLoading, reviews} = this.state;
 
     if (isLoading) {
       return (
         <div className={classes.progressWrapper}>
-          <CircularProgress />
+          <CircularProgress/>
         </div>
       );
     }
@@ -81,9 +98,9 @@ class Reviews extends Component {
     return (
       <Grid container spacing={3}>
         {reviews.map(review => (
-          <Grid item key={review.id} lg={12} md={12} xs={12} sm={12}>
+          <Grid item key={review.id} lg={12} md={12} sm={12} xs={12}>
             <Link to="#">
-              <ReviewCard review={review} />
+              <ReviewCard review={review}/>
             </Link>
           </Grid>
         ))}
@@ -92,18 +109,25 @@ class Reviews extends Component {
   }
 
   handleSourceChange = (source) => {
-    this.setState({ source: source}, () => {
+    this.setState({source: source}, () => {
       this.getReviews();
     });
   };
 
+  handleSortChange = (sortBy) => {
+    this.setState({sortBy: sortBy}, () => {
+      this.getReviews();
+    });
+  };
+
+
   render() {
-    const { classes } = this.props;
+    const {classes} = this.props;
 
     return (
       <DashboardLayout title="Reviews">
         <div className={classes.root}>
-          <ReviewsToolbar handleSource={this.handleSourceChange}/>
+          <ReviewsToolbar handleSource={this.handleSourceChange} handleSortBy={this.handleSortChange}/>
           <div className={classes.content}>{this.renderReviews()}</div>
         </div>
       </DashboardLayout>

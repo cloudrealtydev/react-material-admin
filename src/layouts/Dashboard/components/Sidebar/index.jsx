@@ -95,7 +95,8 @@ class Sidebar extends Component {
         <List component="div" disablePadding subheader={
           <ListSubheader className={classes.listSubheader}>
             Support
-          </ListSubheader>}>
+          </ListSubheader>}
+        >
           <ListItem className={classes.listItem} component="a" href="https://devias.io/contact-us" target="_blank">
             <ListItemIcon className={classes.listItemIcon}>
               <InfoIcon />
@@ -109,7 +110,8 @@ class Sidebar extends Component {
         <List component="div" disablePadding subheader={
           <ListSubheader className={classes.listSubheader}>
             Language
-          </ListSubheader>}>
+          </ListSubheader>}
+        >
           <FormControl className={classes.formControl}>
             <Select
               onChange={event => this.handleChangeLang(event.target.value)}

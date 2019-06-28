@@ -120,7 +120,7 @@ class SignIn extends Component {
     const showEmailError = touched.email && errors.email;
     const showPasswordError = touched.password && errors.password;
 
-/*    SweetAlert.fire({
+    /*    SweetAlert.fire({
       title: 'Error!',
       text: 'Do you want to continue',
       type: 'error',

@@ -25,7 +25,7 @@ class ReviewsToolbar extends Component {
 
   state = {
     selectedSourceOptions: 'all',
-    selectedSortOptions: '0',
+    selectedSortOptions: 'mostRelated',
     searchText:'',
   };
 
@@ -40,6 +40,7 @@ class ReviewsToolbar extends Component {
     this.setState({
       selectedSortOptions: value
     });
+    this.props.handleSortBy(value)
   };
 
   handleChangeSearchText = (value) => {
@@ -106,7 +107,7 @@ class ReviewsToolbar extends Component {
             onChange={event => this.handleChangeSortOptions(event.target.value)}
             value={selectedSortOptions}
           >
-            <MenuItem value={0}>
+            <MenuItem value={'mostRelated'}>
               <Typography
                 variant="h6"
               >
@@ -114,7 +115,7 @@ class ReviewsToolbar extends Component {
               </Typography>
             </MenuItem>
 
-            <MenuItem value={1}>
+            <MenuItem value={'mostRecent'}>
               <Typography
                 variant="h6"
               >
@@ -122,7 +123,7 @@ class ReviewsToolbar extends Component {
               </Typography>
             </MenuItem>
 
-            <MenuItem value={2}>
+            <MenuItem value={'highestPoint'}>
               <Typography
                 variant="h6"
               >
@@ -130,7 +131,7 @@ class ReviewsToolbar extends Component {
               </Typography>
             </MenuItem>
 
-            <MenuItem value={3}>
+            <MenuItem value={'lowestPoint'}>
               <Typography
                 variant="h6"
               >
@@ -163,7 +164,8 @@ class ReviewsToolbar extends Component {
 ReviewsToolbar.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
-  handleSource: () => {}
+  handleSource: () => {},
+  handleSortBy: () => {}
 };
 
 export default withStyles(styles)(ReviewsToolbar);
