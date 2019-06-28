@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Avatar, withStyles, Typography} from '@material-ui/core';
-import {LocationOn as LocationOnIcon } from '@material-ui/icons';
+import {LocationOn as LocationOnIcon} from '@material-ui/icons';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import BookingIcon from './icons/booking_icon.png';
 import TripAdvisor from './icons/tripadvisor_icon.png';
 import GoogleIcon from './icons/google.jpg';
 import styles from './styles';
+import './css/scrollbar.css';
 
 
 class ReviewCard extends Component {
@@ -28,7 +29,7 @@ class ReviewCard extends Component {
   }
 
   render() {
-    const { classes, review } = this.props;
+    const {classes, review} = this.props;
     let sourceSite;
     if (review.source === 'Booking.com') {
       sourceSite = <img alt="Booking.com" className={classes.site} src={BookingIcon}/>;
@@ -58,7 +59,7 @@ class ReviewCard extends Component {
               </Typography>
 
               <Typography className={classes.location} variant="h4">
-                {review.location && <LocationOnIcon className={classes.icon} />}
+                {review.location && <LocationOnIcon className={classes.icon}/>}
                 {review.location}
               </Typography>
 
@@ -83,9 +84,9 @@ class ReviewCard extends Component {
 
           </div>
 
-          <div>
+          <div >
 
-            <Typography className={classes.description} variant="body1">
+            <Typography className="scroll" variant="body1">
               {review.comment}
             </Typography>
 

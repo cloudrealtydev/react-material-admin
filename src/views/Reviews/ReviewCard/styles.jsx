@@ -56,5 +56,5 @@ export default theme => ({
   site: {
     color: 'gray',
     height: '1.7rem',
-  },
+  }
 });
