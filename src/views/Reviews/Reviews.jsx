@@ -19,7 +19,8 @@ class Reviews extends Component {
     reviewsTotal: 0,
     error: null,
     source: '',
-    sortBy: ''
+    sortBy: '',
+    searchComment: ''
   };
 
   async getReviews() {
@@ -34,6 +35,8 @@ class Reviews extends Component {
           reviews = await ReviewServices.getBookingReviewsSortByLowestPoint();
         } else if (this.state.sortBy === 'mostRecent') {
           reviews = await ReviewServices.getBookingReviewsSortByMostRecent();
+        } else if (this.state.searchComment) {
+          reviews = await ReviewServices.getBookingReviewsCommentLike(this.state.searchComment);
         } else {
           reviews = await ReviewServices.getBookingReviews();
         }
@@ -44,7 +47,11 @@ class Reviews extends Component {
           reviews = await ReviewServices.getGoogleReviewsSortByLowestPoint();
         } else if (this.state.sortBy === 'mostRecent') {
           reviews = await ReviewServices.getGoogleReviewsSortByMostRecent();
-        } else {
+        }
+        else if (this.state.searchComment) {
+          reviews = await ReviewServices.getGoogleReviewsCommentLike(this.state.searchComment);
+        }
+        else {
           reviews = await ReviewServices.getGoogleReviews();
         }
       } else {
@@ -120,6 +127,12 @@ class Reviews extends Component {
     });
   };
 
+  handleCommentSearchChange = (searchComment) => {
+    this.setState({searchComment: searchComment}, () => {
+      this.getReviews();
+    });
+  };
+
 
   render() {
     const {classes} = this.props;
@@ -127,7 +140,9 @@ class Reviews extends Component {
     return (
       <DashboardLayout title="Reviews">
         <div className={classes.root}>
-          <ReviewsToolbar handleSource={this.handleSourceChange} handleSortBy={this.handleSortChange}/>
+          <ReviewsToolbar handleSearchComment={this.handleCommentSearchChange} handleSortBy={this.handleSortChange}
+                          handleSource={this.handleSourceChange}
+          />
           <div className={classes.content}>{this.renderReviews()}</div>
         </div>
       </DashboardLayout>

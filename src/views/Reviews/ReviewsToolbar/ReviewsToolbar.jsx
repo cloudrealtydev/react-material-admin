@@ -40,13 +40,14 @@ class ReviewsToolbar extends Component {
     this.setState({
       selectedSortOptions: value
     });
-    this.props.handleSortBy(value)
+    this.props.handleSortBy(value);
   };
 
   handleChangeSearchText = (value) => {
     this.setState({
       searchText: value
     });
+    this.props.handleSearchComment(value);
   };
 
   render() {
@@ -165,7 +166,8 @@ ReviewsToolbar.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
   handleSource: () => {},
-  handleSortBy: () => {}
+  handleSortBy: () => {},
+  handleSearchComment: () => {}
 };
 
 export default withStyles(styles)(ReviewsToolbar);

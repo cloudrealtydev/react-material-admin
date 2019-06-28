@@ -34,6 +34,14 @@ class ReviewServices {
       });
   }
 
+  static async getBookingReviewsCommentLike(comment) {
+    return await axios.get('http://localhost:3001/api/combinedReview?source=booking&commentLike=' + comment)
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error during get review:', error);
+      });
+  }
+
   static async getGoogleReviews() {
     return await axios.get('http://localhost:3001/api/combinedReview?source=google')
       .then(response => response.data)
@@ -60,6 +68,14 @@ class ReviewServices {
 
   static async getGoogleReviewsSortByMostRecent() {
     return await axios.get('http://localhost:3001/api/combinedReview?source=google&sortBy=mostRecent')
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error during get review:', error);
+      });
+  }
+
+  static async getGoogleReviewsCommentLike(comment) {
+    return await axios.get('http://localhost:3001/api/combinedReview?source=google&commentLike=' + comment)
       .then(response => response.data)
       .catch(error => {
         console.error('Error during get review:', error);
