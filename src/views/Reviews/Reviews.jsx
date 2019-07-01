@@ -141,7 +141,7 @@ class Reviews extends Component {
       <DashboardLayout title="Reviews">
         <div className={classes.root}>
           <ReviewsToolbar handleSearchComment={this.handleCommentSearchChange} handleSortBy={this.handleSortChange}
-                          handleSource={this.handleSourceChange}
+            handleSource={this.handleSourceChange}
           />
           <div className={classes.content}>{this.renderReviews()}</div>
         </div>

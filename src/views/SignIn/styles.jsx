@@ -138,7 +138,9 @@ export default theme => ({
   },
   signInError: {
     marginTop: theme.spacing.unit * 2,
-    color: theme.palette.danger.main
+    color: theme.palette.danger.main,
+    display: 'flex',
+    alignItems: 'center',
   },
   signUp: {
     marginTop: theme.spacing.unit * 2,
