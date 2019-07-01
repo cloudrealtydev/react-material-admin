@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Link, withRouter} from 'react-router-dom';
 
 // Externals
 import PropTypes from 'prop-types';
@@ -8,7 +8,7 @@ import validate from 'validate.js';
 import _ from 'underscore';
 
 // Material helpers
-import { withStyles } from '@material-ui/core';
+import {withStyles} from '@material-ui/core';
 
 // Material components
 import {
@@ -20,6 +20,9 @@ import {
 } from '@material-ui/core';
 
 
+import {Cancel} from '@material-ui/icons';
+
+
 // Component styles
 import styles from './styles';
 
@@ -28,15 +31,17 @@ import styles from './styles';
 // Form validation schema
 import schema from './schema';
 
-import { Footer } from '../../layouts/Dashboard/components';
+import {Footer} from '../../layouts/Dashboard/components';
+import LoginService from '../../services/login/index';
 
 // Service methods
-const signIn = () => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(true);
-    }, 1500);
-  });
+const signIn = (credentials) => {
+  return LoginService.login(credentials);
+  /*  return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(true);
+      }, 1500);
+    });*/
 };
 
 class SignIn extends Component {
@@ -55,19 +60,20 @@ class SignIn extends Component {
     },
     isValid: false,
     isLoading: false,
-    submitError: null
+    submitError: null,
+    showSignInError: null
   };
 
   handleBack = () => {
-    const { history } = this.props;
+    const {history} = this.props;
 
     history.goBack();
   };
 
   validateForm = _.debounce(() => {
-    const { values } = this.state;
+    const {values} = this.state;
 
-    const newState = { ...this.state };
+    const newState = {...this.state};
     const errors = validate(values, schema);
 
     newState.errors = errors || {};
@@ -77,7 +83,7 @@ class SignIn extends Component {
   }, 300);
 
   handleFieldChange = (field, value) => {
-    const newState = { ...this.state };
+    const newState = {...this.state};
 
     newState.submitError = null;
     newState.touched[field] = true;
@@ -88,16 +94,22 @@ class SignIn extends Component {
 
   handleSignIn = async () => {
     try {
-      const { history } = this.props;
-      const { values } = this.state;
+      const {history} = this.props;
+      const {values} = this.state;
 
-      this.setState({ isLoading: true });
+      this.setState({isLoading: true});
+      this.setState({showSignInError: false});
 
-      await signIn(values.email, values.password);
-
-      localStorage.setItem('isAuthenticated', true);
-
-      history.push('/dashboard');
+      let loginResult = await signIn({email: values.email, password: values.password});
+      this.setState({isLoading: false});
+      if (loginResult) {
+        localStorage.setItem('isAuthenticated', true);
+        history.push('/dashboard');
+        this.setState({showSignInError: false});
+      } else {
+        localStorage.setItem('isAuthenticated', true);
+        this.setState({showSignInError: true});
+      }
     } catch (error) {
       this.setState({
         isLoading: false,
@@ -107,14 +119,15 @@ class SignIn extends Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const {classes} = this.props;
     const {
       values,
       touched,
       errors,
       isValid,
       submitError,
-      isLoading
+      isLoading,
+      showSignInError
     } = this.state;
 
     const showEmailError = touched.email && errors.email;
@@ -229,7 +242,7 @@ class SignIn extends Component {
                     </Typography>
                   )}
                   {isLoading ? (
-                    <CircularProgress className={classes.progress} />
+                    <CircularProgress className={classes.progress}/>
                   ) : (
                     <Button
                       className={classes.signInButton}
@@ -242,6 +255,16 @@ class SignIn extends Component {
                       Sign in now
                     </Button>
                   )}
+                  {showSignInError &&
+                  <Typography
+                    className={classes.signInError}
+                    variant="subtitle2"
+                  >
+                    <Cancel/>
+                    Username or password is wrong.
+                  </Typography>
+                  }
+
                   <Typography
                     className={classes.signUp}
                     variant="body1"

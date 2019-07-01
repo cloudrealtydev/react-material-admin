@@ -136,6 +136,10 @@ export default theme => ({
     marginTop: theme.spacing.unit * 2,
     width: '100%'
   },
+  signInError: {
+    marginTop: theme.spacing.unit * 2,
+    color: theme.palette.danger.main
+  },
   signUp: {
     marginTop: theme.spacing.unit * 2,
     color: theme.palette.text.secondary
