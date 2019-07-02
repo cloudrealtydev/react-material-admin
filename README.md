@@ -1,8 +1,8 @@
-## React Material Admin
+## Hotel Insighter
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-React Material Admin
+Hotel Insighter
 
 ## Quick start
 
