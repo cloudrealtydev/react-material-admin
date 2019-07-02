@@ -47,7 +47,7 @@ class ReviewCard extends Component {
           <div className={classes.details}>
 
             <div className={classes.imageWrapper}>
-              <Avatar className={classes.avatar} src={review.avatarUrl}>
+              <Avatar className={classes.avatar} src={review.profilePicture}>
                 {review.name.charAt(0)}
               </Avatar>
             </div>
