@@ -8,6 +8,7 @@ import Account from './views/Account';
 import Settings from './views/Settings';
 import SignUp from './views/SignUp';
 import SignIn from './views/SignIn';
+import Register from './views/Register'
 
 export default class Routes extends Component {
   render() {
@@ -21,6 +22,7 @@ export default class Routes extends Component {
         <Route component={Settings} exact path="/settings"/>
         <Route component={SignUp} exact path="/sign-up"/>
         <Route component={SignIn} exact path="/sign-in"/>
+        <Route component={Register} exact path="/register"/>
       </Switch>
     );
   }
