@@ -78,8 +78,13 @@ class Sidebar extends Component {
             <ListItemText classes={{primary: classes.listItemText}} primary="Authentication"/>
           </ListItem>
 
-          <ListItem activeClassName={classes.activeListItem} className={classes.listItem} component={NavLink}
-                    to="/account">
+          <ListItem activeClassName={classes.activeListItem} className={classes.listItem} component={NavLink} to="/register">
+            <ListItemIcon className={classes.listItemIcon}>
+              <LockOpenIcon />
+            </ListItemIcon>
+            <ListItemText classes={{ primary: classes.listItemText }} primary="Register"/>
+          </ListItem>
+
             <ListItemIcon className={classes.listItemIcon}>
               <AccountBoxIcon/>
             </ListItemIcon>
