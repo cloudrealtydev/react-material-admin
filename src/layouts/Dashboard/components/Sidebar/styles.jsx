@@ -90,6 +90,10 @@ export default theme => ({
     minWidth: 60,
     marginRight: 'auto'
   },
+  language: {
+    bottom: 10,
+    position: 'fixed'
+  },
   icon: {
     width: '24px',
   },
